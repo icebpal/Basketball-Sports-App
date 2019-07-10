@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">TeamCharizard</string>
     <string name="name_of_app">App Name</string>
+    <string name="view_stats">Player Stats</string>
     <string name="parent_button">Parent</string>
     <string name="coach_button">Coach</string>
+    <string name="fg">FG</string>
+    <string name="ThreePT">3PT</string>
+    <string name="points">PTS</string>
+    <string name="ft">FT</string>
+    <string name="rebounds">REB</string>
+    <string name="steal">STL</string>
+    <string name="block">BLK</string>
+    <string name="fouls">PF</string>
+    <string name="players">Player Names</string>
     <string name="action1">2pt fg made</string>
     <string name="action2">2pt fg missed</string>
     <string name="action3">3pt fg made</string>
@@ -15,6 +25,14 @@
     <string name="action10">Foul</string>
     <string name="action11"></string>
     <string name="action12"></string>
+    <string name="tempFG">1-1</string>
+    <string name="tempThree">2-2</string>
+    <string name="tempFree">0-7</string>
+    <string name="tempReb">3</string>
+    <string name="tempBlock">4</string>
+    <string name="tempSteal">5</string>
+    <string name="tempFoul">6</string>
+    <string name="tempPoints">8</string>
     <string name="add_stats_title">Actions</string>
     <string name="player1">1</string>
     <string name="player2">2</string>
