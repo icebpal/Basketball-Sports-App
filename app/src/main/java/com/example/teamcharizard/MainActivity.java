@@ -26,5 +26,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        parentButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ChosePlayerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
