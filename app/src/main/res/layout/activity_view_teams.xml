@@ -272,11 +272,7 @@
                     android:text="@string/tempFree"
                     android:padding="3dip"
                     />
-                <TextView
-                    android:id="@+id/player5_reb"
-                    android:text="@string/tempReb"
-                    android:padding="3dip"
-                    />
+
                 <TextView
                     android:id="@+id/player5_steal"
                     android:text="@string/tempSteal"
@@ -292,6 +288,12 @@
                     android:text="@string/tempFoul"
                     android:padding="3dip"
                     />
+
+                <TextView
+                    android:id="@+id/player5_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb" />
+
                 <TextView
                     android:id="@+id/player5_points"
                     android:text="@string/tempPoints"

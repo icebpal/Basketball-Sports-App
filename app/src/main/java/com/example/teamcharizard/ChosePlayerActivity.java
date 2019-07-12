@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ChosePlayerActivity extends AppCompatActivity {
 
     private Button player_1, player_2, player_3, player_4, player_5, player_6, player_7, player_8,
-            player_9, player_10;
+            player_9, player_10, viewAction_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class ChosePlayerActivity extends AppCompatActivity {
         player_8 = (Button)findViewById(R.id.chose_player_button8);
         player_9 = (Button)findViewById(R.id.chose_player_button9);
         player_10 = (Button)findViewById(R.id.chose_player_button10);
+        viewAction_button = (Button)findViewById(R.id.viewAction_button);
+        TextView stats_button = findViewById(R.id.button);
         Button[] players= {player_1, player_2, player_3, player_4, player_5,
             player_6, player_7, player_8, player_9, player_10};
         for(int i = 0; i < 10; i++){
@@ -37,6 +40,23 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 }
             });
         }
+
+        viewAction_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ViewActionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        stats_button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ViewTeamsActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
