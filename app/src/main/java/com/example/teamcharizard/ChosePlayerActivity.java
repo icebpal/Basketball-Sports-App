@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ChosePlayerActivity extends AppCompatActivity {
 
     private Button player_1, player_2, player_3, player_4, player_5, player_6, player_7, player_8,
             player_9, player_10, viewAction_button;
-
+    static String number =  "Player Number";
+    private String player_number;
+    private Integer ADD_STATS_ACTIVITY_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +39,10 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getApplicationContext(), AddStatsActivity.class);
-                    startActivity(intent);
+                    Button temp = findViewById(view.getId());
+                    player_number = temp.getText().toString();
+                    intent.putExtra(number, player_number);
+                    startActivityForResult(intent, ADD_STATS_ACTIVITY_REQUEST);
                 }
             });
         }
@@ -58,5 +64,16 @@ public class ChosePlayerActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void onActivityResult(int activityCode, int resultCode, Intent intent){
+        if (activityCode == ADD_STATS_ACTIVITY_REQUEST){
+            if (resultCode == RESULT_OK){
+                // this code block is the point where the stats are added to the total.
+                String player_num = intent.getStringExtra(number);
+                String action = intent.getStringExtra(AddStatsActivity.Action);
+                Toast.makeText(this, player_num, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, action, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
