@@ -27,6 +27,8 @@ public class StartNewGameActivity extends AppCompatActivity {
                 teamleft = team_1.getText().toString();
                 teamright = team_2.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), ViewGamesActivity.class);
+                intent.putExtra("LEFT", teamleft);
+                intent.putExtra("RIGHT",teamright);
                 startActivity(intent);
             }
         });
