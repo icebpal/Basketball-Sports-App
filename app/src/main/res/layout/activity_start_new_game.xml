@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <EditText
@@ -26,23 +27,27 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:gravity="start"
-            android:text="Team 1" />
+            android:autofillHints="@string/team1"
+            android:text="@string/team1"
+             />
 
 
         <TextView
             android:id="@+id/vs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:gravity="center_horizontal"
-            android:text="vs." />
+            android:text="@string/VS" />
 
         <EditText
             android:id="@+id/team2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:text="Team 2" />
+            android:autofillHints="@string/team2"
+            android:text="@string/team2"
+             />
     </LinearLayout>
 
     <Button
@@ -50,6 +55,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="Add Game" />
+        android:text="@string/addGame" />
 
 </LinearLayout>
