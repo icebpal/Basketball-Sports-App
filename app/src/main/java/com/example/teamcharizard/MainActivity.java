@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         coachButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CoachLoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ChosePlayerActivity.class);
                 startActivity(intent);
             }
         });
