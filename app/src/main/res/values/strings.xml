@@ -49,8 +49,8 @@
     <string name="action8">FT missed</string>
     <string name="action9">Rebound</string>
     <string name="action10">Foul</string>
-    <string name="action11"></string>
-    <string name="action12"></string>
+    <string name="action11">Stop Clock</string>
+    <string name="action12">Timeout</string>
     <string name="tempFG">1-1</string>
     <string name="tempThree">2-2</string>
     <string name="tempFree">0-7</string>
