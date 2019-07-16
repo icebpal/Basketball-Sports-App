@@ -23,10 +23,10 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
                 <Button
                     android:id="@+id/add_stat1"
                     android:layout_height="match_parent"
@@ -53,10 +53,10 @@
                     android:maxLines="2"/>
             </LinearLayout>
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
                 <Button
                     android:id="@+id/add_stat4"
                     android:layout_height="match_parent"
@@ -86,10 +86,10 @@
                     android:maxLines="2"/>
             </LinearLayout>
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
                 <Button
                     android:id="@+id/add_stat7"
                     android:layout_height="match_parent"
@@ -119,10 +119,10 @@
                     android:maxLines="2"/>
             </LinearLayout>
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
                 <Button
                     android:id="@+id/add_stat10"
                     android:layout_height="match_parent"
