@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 public class ViewGamesActivity extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class ViewGamesActivity extends AppCompatActivity {
         team_button = (Button)findViewById(R.id.team_button);
         add_game = (Button)findViewById(R.id.add_new_game);
         LinearLayout layout = (LinearLayout)findViewById(R.id.layout);
+        ScrollView scroll = (ScrollView)findViewById(R.id.scroll);
         Intent i = getIntent();
         String left = i.getStringExtra("LEFT");
         String right = i.getStringExtra("RIGHT");

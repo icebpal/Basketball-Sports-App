@@ -77,5 +77,6 @@
     <string name="stats"> Stats </string>
     <string name="addNewGame"> Add New Game </string>
     <string name="addGame"> Add Game </string>
+    <string name="choose"> Choose Game </string>
 
 </resources>
