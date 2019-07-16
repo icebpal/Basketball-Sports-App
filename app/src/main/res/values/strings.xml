@@ -67,8 +67,8 @@
     <string name="player5">5</string>
     <string name="team1">Team 1</string>
     <string name="team2">Team 2</string>
-    <string name="leagueName"> UIUC </string>
-    <string name="game1"> Team1 vs Team2 </string>
+    <string name="leagueName"> UIUC league </string>
+    <string name="game1"> Team1 VS Team2 </string>
     <string name="team_button"> teams </string>
     <string name="VS"> VS. </string>
     <string name="vs"> vs. </string>
@@ -77,5 +77,6 @@
     <string name="stats"> Stats </string>
     <string name="addNewGame"> Add New Game </string>
     <string name="addGame"> Add Game </string>
+    <string name="choose"> Choose Game </string>
 
 </resources>
