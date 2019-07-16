@@ -45,6 +45,79 @@
             />
 
         <TextView
+            android:id="@+id/score1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="12"
+            android:textSize="48sp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="40dp"
+            android:layout_below="@id/team1"
+            />
+
+        <TextView
+            android:id="@+id/timeout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:text="2"
+            android:textSize="48sp"
+            android:layout_toEndOf="@id/score1"
+            android:layout_below="@id/team1"
+            />
+
+        <TextView
+            android:id="@+id/foul1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:text="1"
+            android:textSize="48sp"
+            android:layout_toEndOf="@id/timeout1"
+            android:layout_below="@id/team1"
+            />
+
+        <TextView
+            android:id="@+id/score2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:text="8"
+            android:textSize="48sp"
+            android:layout_toStartOf="@id/team2"
+            android:layout_below="@id/team1"
+            />
+
+        <TextView
+            android:id="@+id/timeout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:text="3"
+            android:textSize="48sp"
+            android:layout_toEndOf="@id/score2"
+            android:layout_below="@id/team1"
+            />
+
+        <TextView
+            android:id="@+id/foul2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="2"
+            android:textSize="48sp"
+            android:layout_toEndOf="@id/timeout2"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/team1"
+            />
+
+        <TextView
             android:id="@+id/quarter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +125,7 @@
             android:text="@string/quarter2"
             android:textSize="48sp"
             android:layout_alignParentStart="true"
-            android:layout_below="@id/team1"
+            android:layout_below="@id/score1"
             />
 
         <TextView
@@ -63,7 +136,7 @@
             android:text="@string/timeExample"
             android:textSize="48sp"
             android:layout_toEndOf="@id/quarter"
-            android:layout_below="@id/vs"
+            android:layout_below="@id/timeout1"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             />
@@ -73,7 +146,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/live"
-            android:layout_below="@+id/team2"
+            android:layout_below="@+id/score2"
             android:layout_toEndOf="@id/time"
             android:textSize="48sp"
             android:paddingBottom="10dp"
@@ -87,7 +160,7 @@
             android:textSize="48sp"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@id/live"
-            android:layout_below="@+id/team2"
+            android:layout_below="@+id/foul2"
             android:paddingBottom="10dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
