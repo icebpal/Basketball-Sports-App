@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewActionActivity"></activity>
+        <activity android:name=".ViewTeamActivityParents"></activity>
+        <activity android:name=".ViewGamesActivityParents" />
+        <activity android:name=".ViewActionActivityParents" />
+        <activity android:name=".SummaryActivityParents" />
+        <activity android:name=".PickTeamActivityParents" />
+        <activity android:name=".ChoosPlayerActivityParents" />
+        <activity android:name=".ViewActionActivity" />
         <activity android:name=".PickTeamActivity" />
         <activity android:name=".ViewTeamsActivity" />
         <activity android:name=".ViewGamesActivity" />

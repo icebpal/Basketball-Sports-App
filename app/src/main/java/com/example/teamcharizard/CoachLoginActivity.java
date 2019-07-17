@@ -19,6 +19,5 @@ public class CoachLoginActivity extends AppCompatActivity {
         EditText password_input = findViewById(R.id.password_entry);
 
 
-        username_input.set
     }
 }
