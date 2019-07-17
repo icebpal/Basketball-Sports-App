@@ -156,6 +156,33 @@
                 android:text="@string/game1"
                 app:layout_constraintVertical_bias="0.025"
                 tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/game1"
+                app:layout_constraintVertical_bias="0.025"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/game1"
+                app:layout_constraintVertical_bias="0.025"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/game1"
+                app:layout_constraintVertical_bias="0.025"
+                tools:layout_editor_absoluteX="0dp" />
         </LinearLayout>
 
     </ScrollView>
@@ -163,7 +190,7 @@
     <Button
         android:id="@+id/team_button"
         android:layout_width="96dp"
-        android:layout_height="66dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/team_button"
@@ -176,10 +203,12 @@
         android:id="@+id/add_new_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/addNewGame"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.816"
+        app:layout_constraintStart_toEndOf="@+id/choosegame"
+        app:layout_constraintTop_toBottomOf="@+id/team_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
