@@ -18,18 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         coachButton = (Button) findViewById(R.id.coach_button);
-        parentButton = (Button) findViewById(R.id.parent_button);
         coachButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ViewGamesActivity.class);
-                startActivity(intent);
-            }
-        });
-        parentButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ViewGamesActivityParents.class);
                 startActivity(intent);
             }
         });
