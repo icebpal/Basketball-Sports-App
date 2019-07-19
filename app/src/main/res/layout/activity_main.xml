@@ -19,25 +19,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/parent_button"
+        android:id="@+id/coach_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:text="@string/parent_button"
+        android:text="@string/coach_button"
         app:layout_constraintRight_toRightOf="@id/app_name"
         app:layout_constraintTop_toBottomOf="@id/app_name" />
 
-    <Button
-        android:id="@+id/coach_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingStart="25dp"
-        android:paddingEnd="24dp"
-        android:text="@string/coach_button"
-        app:layout_constraintLeft_toLeftOf="@id/app_name"
-        app:layout_constraintTop_toBottomOf="@id/app_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
