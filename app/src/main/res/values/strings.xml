@@ -65,6 +65,13 @@
     <string name="player3">3</string>
     <string name="player4">4</string>
     <string name="player5">5</string>
+    <string name="player6">6</string>
+    <string name="player7">7</string>
+    <string name="player8">8</string>
+    <string name="player9">9</string>
+    <string name="player10">10</string>
+    <string name="player11">11</string>
+    <string name="player12">12</string>
     <string name="team1">Team 1</string>
     <string name="team2">Team 2</string>
     <string name="leagueName"> UIUC league </string>
