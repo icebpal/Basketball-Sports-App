@@ -89,4 +89,7 @@
     <string name="password">Password</string>
     <string name="coach_login">Coach Login</string>
     <string name="username">Username</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
