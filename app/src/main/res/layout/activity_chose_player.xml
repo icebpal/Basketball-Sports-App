@@ -19,8 +19,10 @@
             android:paddingEnd="10dp"
             android:text="UIUC"
             android:textSize="40sp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
             />
 
         <TextView
@@ -30,45 +32,46 @@
             android:paddingBottom="20dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:text="@string/team2"
+            android:text="Other"
             android:textSize="40sp"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="10dp"
             />
 
         <TextView
             android:id="@+id/score1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:text="108"
-            android:textSize="36sp"
-            android:layout_toStartOf="@id/dash"
-            android:layout_alignBaseline="@id/team2"
-            />
+            android:layout_below="@id/team1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginBottom="60dp"
+            android:text="45"
+            android:textSize="48sp" />
 
         <TextView
             android:id="@+id/dash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
             android:text="-"
             android:textSize="36sp"
             android:layout_centerHorizontal="true"
-            android:layout_alignBaseline="@id/team2"
+            android:layout_below="@id/team2"
             />
 
         <TextView
             android:id="@+id/score2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="86"
-            android:layout_toEndOf="@+id/dash"
-            android:textSize="36sp"
-            android:paddingBottom="10dp"
-            android:layout_alignBaseline="@id/team2"
-            />
+            android:layout_below="@id/team2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="60dp"
+            android:text="38"
+            android:textSize="48sp" />
 
         <TextView
             android:id="@+id/quarter"
@@ -78,7 +81,8 @@
             android:text="@string/quarter2"
             android:textSize="32sp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/score1"
+            android:layout_alignBaseline="@id/team1"
+            android:layout_marginTop="10dp"
             />
 
         <Button
@@ -149,27 +153,30 @@
 
         <Button
             android:id="@+id/add_stat1"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/action1"
-            android:layout_margin="10dp"
-            android:layout_toEndOf="@id/chose_player_button1"
             android:layout_alignBaseline="@id/chose_player_button1"
-            android:maxLines="2"/>
+            android:layout_margin="10dp"
+            android:padding="20dp"
+            android:layout_toEndOf="@id/chose_player_button1"
+            android:maxLines="2"
+            android:text="@string/action1" />
         <Button
             android:id="@+id/add_stat2"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:text="@string/action2"
+            android:padding="20dp"
             android:layout_margin="10dp"
             android:layout_toEndOf="@id/add_stat1"
             android:layout_alignBaseline="@id/chose_player_button1"
             android:maxLines="2"/>
         <Button
             android:id="@+id/add_stat3"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/action5"
+            android:text="@string/action3"
+            android:padding="20dp"
             android:layout_margin="10dp"
             android:layout_alignBaseline="@id/chose_player_button2"
             android:layout_toEndOf="@id/chose_player_button2"
@@ -177,27 +184,30 @@
 
         <Button
             android:id="@+id/add_stat4"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/action3"
+            android:text="@string/action4"
+            android:padding="20dp"
             android:layout_alignBaseline="@id/chose_player_button2"
             android:layout_toEndOf="@id/add_stat3"
             android:layout_margin="10dp"
             android:maxLines="2"/>
         <Button
             android:id="@+id/add_stat5"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/action4"
+            android:text="@string/action5"
+            android:padding="20dp"
             android:layout_alignBaseline="@id/chose_player_button3"
             android:layout_toEndOf="@id/chose_player_button3"
             android:layout_margin="10dp"
             android:maxLines="2"/>
         <Button
             android:id="@+id/add_stat6"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:text="@string/action6"
+            android:padding="20dp"
             android:layout_alignBaseline="@id/chose_player_button3"
             android:layout_toEndOf="@id/add_stat5"
             android:layout_margin="10dp"
@@ -205,18 +215,20 @@
 
         <Button
             android:id="@+id/add_stat7"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:padding="20dp"
             android:layout_alignBaseline="@id/chose_player_button4"
             android:layout_toEndOf="@id/chose_player_button4"
-            android:text="@string/action7"
+            android:text="@string/action9"
             android:layout_margin="10dp"
             android:maxLines="2"/>
 
         <Button
             android:id="@+id/add_stat8"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:padding="20dp"
             android:layout_alignBaseline="@id/chose_player_button4"
             android:layout_toEndOf="@id/add_stat7"
             android:text="@string/action8"
@@ -225,21 +237,23 @@
 
         <Button
             android:id="@+id/add_stat9"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:padding="20dp"
             android:layout_alignBaseline="@id/chose_player_button5"
             android:layout_toEndOf="@id/chose_player_button5"
-            android:text="@string/action9"
+            android:text="@string/action10"
             android:layout_margin="10dp"
             android:maxLines="2"/>
 
         <Button
             android:id="@+id/add_stat10"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:padding="20dp"
             android:layout_alignBaseline="@id/chose_player_button5"
             android:layout_toEndOf="@id/add_stat9"
-            android:text="@string/action10"
+            android:text="@string/action7"
             android:layout_margin="10dp"
             android:maxLines="2"/>
 
