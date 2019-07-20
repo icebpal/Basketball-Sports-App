@@ -61,7 +61,7 @@
 
         <fragment
             android:id="@+id/fragment"
-            android:name="com.example.teamcharizard.ViewTeamsFragmentTwo"
+            android:name="com.example.teamcharizard.ViewTeamsFragmentOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

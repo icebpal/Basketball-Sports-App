@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="131dp"
+            android:layout_height="121dp"
             android:layout_marginTop="35dp"
             android:gravity="bottom"
             android:orientation="horizontal">
@@ -78,36 +78,45 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <fragment
-            android:id="@+id/fragment"
-            android:name="com.example.teamcharizard.MainActivityTeamStatsFragment"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
+            android:layout_height="370dp"
+            android:orientation="vertical">
+
+            <fragment
+                android:id="@+id/fragment"
+                android:name="com.example.teamcharizard.MainActivityTeamStatsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:gravity="bottom"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/start_game_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="60dp"
                 android:layout_weight="1"
-                android:text="START"
-                android:textSize="20dp"
-                android:textColor="#DFE6EC"
                 android:background="@drawable/rounded_corner"
+                android:text="START"
+                android:textColor="#DFE6EC"
+                android:textSize="20dp"
                 android:textStyle="bold" />
+
         </LinearLayout>
 
 

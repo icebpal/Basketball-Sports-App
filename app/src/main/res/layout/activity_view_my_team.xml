@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E2FCFAFA"
-    android:clickable="true"
-    tools:context=".MainActivityTeamStatsFragment">
+    tools:context=".ViewMyTeamActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="574dp"
+        android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TableLayout
             android:layout_width="wrap_content"
-            android:layout_height="273dp"
-            android:layout_margin="5dp"
-            android:clipToPadding="false"
-            android:gravity="center_horizontal">
+            android:layout_height="302dp"
+            android:layout_margin="10dp">
 
             <TableRow>
 
@@ -641,13 +638,5 @@
         </TableLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/more_info_button"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginLeft="320dp"
-        android:layout_marginTop="270dp"
-        android:background="@drawable/chevron_right_more_info_button"
-        android:paddingLeft="50dp" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
