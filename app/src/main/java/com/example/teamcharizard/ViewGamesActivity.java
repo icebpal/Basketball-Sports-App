@@ -22,7 +22,7 @@ public class ViewGamesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_games);
         game1_button = (Button)findViewById(R.id.game1);
-        add_game = (Button)findViewById(R.id.add_new_game);
+//        add_game = (Button)findViewById(R.id.add_new_game);
         LinearLayout layout = (LinearLayout)findViewById(R.id.layout);
         ScrollView scroll = (ScrollView)findViewById(R.id.scroll);
         Intent i = getIntent();
@@ -50,12 +50,12 @@ public class ViewGamesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        add_game.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), StartNewGameActivity.class);
-                startActivity(intent);
-            }
-        });
+//        add_game.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), StartNewGameActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }
