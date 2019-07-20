@@ -1,6 +1,9 @@
 package com.example.teamcharizard;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,21 +13,37 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private Button coachButton;
-
+    private Button start_game_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        coachButton = (Button) findViewById(R.id.coach_button);
-        coachButton.setOnClickListener(new View.OnClickListener() {
+        start_game_button = (Button)findViewById(R.id.start_game_button);
+        start_game_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ViewGamesActivity.class);
+                Intent intent = new Intent(getApplicationContext(), StartNewGameActivity.class);
                 startActivity(intent);
             }
         });
 
     }
+
+    public void selectFrag(View view){
+
+        Fragment fr;
+
+        if(view == findViewById(R.id.team_stats_button)){
+            fr = new MainActivityTeamStatsFragment();
+        }else{
+            fr = new MainActivityViewGamesFragment();
+        }
+
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.fragment, fr);
+        transaction.commit();
+    }
+
 }
