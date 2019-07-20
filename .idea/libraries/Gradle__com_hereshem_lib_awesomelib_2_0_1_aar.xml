@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.hereshem.lib:awesomelib:2.0.1@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/b41f8a7c93d3da61e4b9434729211e73/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/b41f8a7c93d3da61e4b9434729211e73/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1cc87f0462d4ecac1529ab0f619f552/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1cc87f0462d4ecac1529ab0f619f552/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.hereshem.lib/awesomelib/2.0.1/642f9e0a37a92431eae2c2e12277ec07cc2627df/awesomelib-2.0.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hereshem.lib/awesomelib/2.0.1/642f9e0a37a92431eae2c2e12277ec07cc2627df/awesomelib-2.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
