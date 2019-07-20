@@ -15,6 +15,16 @@
         android:text="Start a New Game"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:inputType="date|number"
+        android:text="Game Date" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
