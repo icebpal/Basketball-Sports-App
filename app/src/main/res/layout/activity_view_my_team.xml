@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewMyTeamActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="302dp"
+            android:layout_margin="10dp">
+
+            <TableRow>
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/players"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/fg"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/ThreePT"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/ft"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/rebounds"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/steal"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/block"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/fouls"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="@string/points"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player1"
+                    android:padding="3dip"
+                    android:text="@string/player1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player1_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player1_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player1_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player1_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player1_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player1_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player1_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player1_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player2"
+                    android:padding="3dip"
+                    android:text="@string/player2"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player2_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player2_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player2_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player2_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player2_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player2_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player2_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player2_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player3"
+                    android:padding="3dip"
+                    android:text="@string/player3"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player3_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player3_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player3_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player3_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player3_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player3_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player3_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player3_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player4"
+                    android:padding="3dip"
+                    android:text="@string/player4"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player4_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player4_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player4_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player4_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player4_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player4_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player4_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player4_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player5"
+                    android:padding="3dip"
+                    android:text="@string/player5"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player5_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player5_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player5_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player5_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player5_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player5_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player5_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player5_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player6"
+                    android:padding="3dip"
+                    android:text="@string/player6"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player6_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player6_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player6_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player6_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player6_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player6_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player6_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player6_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player7"
+                    android:padding="3dip"
+                    android:text="@string/player7"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player7_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player7_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player7_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player7_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player7_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player7_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player7_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player7_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player8"
+                    android:padding="3dip"
+                    android:text="@string/player8"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player8_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player8_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player8_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player8_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player8_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player8_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player8_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player8_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player9"
+                    android:padding="3dip"
+                    android:text="@string/player9"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player9_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player9_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player9_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player9_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player9_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player9_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player9_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player9_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/view_teams_player10"
+                    android:padding="3dip"
+                    android:text="@string/player10"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player10_fg"
+                    android:padding="3dip"
+                    android:text="@string/tempFG"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player10_three"
+                    android:padding="3dip"
+                    android:text="@string/tempThree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player10_ft"
+                    android:padding="3dip"
+                    android:text="@string/tempFree"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player10_reb"
+                    android:padding="3dip"
+                    android:text="@string/tempReb"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player10_steal"
+                    android:padding="3dip"
+                    android:text="@string/tempSteal"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player10_block"
+                    android:padding="3dip"
+                    android:text="@string/tempBlock"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player10_fouls"
+                    android:padding="3dip"
+                    android:text="@string/tempFoul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/player10_points"
+                    android:padding="3dip"
+                    android:text="@string/tempPoints"
+                    android:textSize="15sp" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
