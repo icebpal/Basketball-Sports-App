@@ -6,28 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/app_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
-        android:text="@string/name_of_app"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/coach_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:text="@string/coach_button"
-        app:layout_constraintRight_toRightOf="@id/app_name"
-        app:layout_constraintTop_toBottomOf="@id/app_name" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:layout_marginTop="35dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/uiuc_icon"
+                android:layout_width="121dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="20dp"
+                app:srcCompat="@drawable/uiuc_icon" />
+
+            <TextView
+                android:id="@+id/my_team"
+                android:layout_width="139dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="206dp"
+                android:paddingBottom="30dp"
+                android:text="UIUC"
+                android:textSize="50sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toEndOf="@+id/uiuc_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.066" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/team_stats_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="selectFrag"
+                android:text="Team Stats"
+                android:textSize="16sp" />
+
+            <!--<Button-->
+            <!--android:id="@+id/player_stats_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Player Stats" />-->
+
+            <Button
+                android:id="@+id/view_game_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="selectFrag"
+                android:text="Schedule"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:orientation="vertical">
+
+            <fragment
+                android:id="@+id/fragment"
+                android:name="com.example.teamcharizard.MainActivityTeamStatsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/start_game_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_corner"
+                android:text="START"
+                android:textColor="#DFE6EC"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
