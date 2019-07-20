@@ -6,4 +6,217 @@
     android:layout_height="match_parent"
     tools:context=".ViewGamesActivity">
 
+    <TextView
+        android:id="@+id/league"
+        android:layout_width="253dp"
+        android:layout_height="72dp"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Schedule"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:layout_marginTop="8dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:verticalScrollbarPosition="right"
+        app:layout_constraintTop_toBottomOf="@+id/league"
+        tools:layout_editor_absoluteX="2dp">
+
+
+  <!--      <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:background="@drawable/item_color_grey"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vs. Purdue"
+                android:layout_alignParentStart="true"
+                android:textSize="26sp"
+                android:padding="20dp"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="4/27"
+                android:padding="20dp"
+                android:textSize="26sp"
+                android:textColor="#000000"
+                />
+
+        </RelativeLayout>
+-->
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/add_new_game">
+
+            <Button
+                android:id="@+id/game1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="4/27 - UIUC Vs. Purdue"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="4/23 - UIUC Vs. Iowa"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="4/19 - UIUC Vs. Michigan"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="4/15 - UIUC Vs. Purdue"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="4/05 - UIUC Vs. Iowa"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="3/21 - UIUC Vs. ISU"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="3/18 - UIUC Vs. Ohio"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="3/12 - UIUC Vs. Michigan"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="3/09 - UIUC Vs. Purdue"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="3/03 - UIUC Vs. Michigan"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="20dp"
+                android:text="2/26 - UIUC Vs. ISU"
+                android:textAlignment="viewStart"
+                app:layout_constraintVertical_bias="0.025"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/add_new_game"
+        android:layout_width="151dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/addNewGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
