@@ -26,8 +26,8 @@ public class AddStatsActivity extends AppCompatActivity {
         stats[7] = (Button)findViewById(R.id.add_stat8);
         stats[8] = (Button)findViewById(R.id.add_stat9);
         stats[9] = (Button)findViewById(R.id.add_stat10);
-        stats[10] = (Button)findViewById(R.id.add_stat11);
-        stats[11] = (Button)findViewById(R.id.add_stat12);
+        //stats[10] = (Button)findViewById(R.id.add_stat11);
+        //stats[11] = (Button)findViewById(R.id.add_stat12);
         for(int i = 0; i < 12; i++){
             stats[i].setOnClickListener(new View.OnClickListener() {
                 @Override

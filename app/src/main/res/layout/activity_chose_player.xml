@@ -87,7 +87,6 @@
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:id="@+id/player_group">
                 <RadioButton
                     android:id="@+id/chose_player_button1"
@@ -134,17 +133,17 @@
                     android:gravity="center"
                     android:text="@string/player5" />
             </RadioGroup>
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="400dp">
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:id="@+id/action_group">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+
                     <RadioButton
-                        android:id="@+id/add_stat1"
+                        android:id="@+id/stat1"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -152,7 +151,7 @@
                         android:maxLines="2"
                         android:text="@string/action1" />
                     <RadioButton
-                        android:id="@+id/add_stat2"
+                        android:id="@+id/stat2"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/action2"
@@ -160,7 +159,7 @@
                         android:layout_margin="10dp"
                         android:maxLines="2"/>
                     <RadioButton
-                        android:id="@+id/add_stat3"
+                        android:id="@+id/stat3"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/action3"
@@ -169,7 +168,7 @@
                         android:maxLines="2"/>
 
                     <RadioButton
-                        android:id="@+id/add_stat4"
+                        android:id="@+id/stat4"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/action4"
@@ -177,20 +176,15 @@
                         android:layout_margin="10dp"
                         android:maxLines="2"/>
                     <RadioButton
-                        android:id="@+id/add_stat5"
+                        android:id="@+id/stat5"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/action5"
                         android:padding="20dp"
                         android:layout_margin="10dp"
                         android:maxLines="2"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
                     <RadioButton
-                        android:id="@+id/add_stat6"
+                        android:id="@+id/stat6"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/action6"
@@ -199,7 +193,7 @@
                         android:maxLines="2"/>
 
                     <RadioButton
-                        android:id="@+id/add_stat7"
+                        android:id="@+id/stat7"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="20dp"
@@ -208,7 +202,7 @@
                         android:maxLines="2"/>
 
                     <RadioButton
-                        android:id="@+id/add_stat8"
+                        android:id="@+id/stat8"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="20dp"
@@ -217,7 +211,7 @@
                         android:maxLines="2"/>
 
                     <RadioButton
-                        android:id="@+id/add_stat9"
+                        android:id="@+id/stat9"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="20dp"
@@ -226,15 +220,15 @@
                         android:maxLines="2"/>
 
                     <RadioButton
-                        android:id="@+id/add_stat10"
+                        android:id="@+id/stat10"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="20dp"
                         android:text="@string/action7"
                         android:layout_margin="10dp"
                         android:maxLines="2"/>
-                </LinearLayout>
             </RadioGroup>
+            </ScrollView>
         </LinearLayout>
         <Button
             android:layout_width="wrap_content"
