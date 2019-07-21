@@ -26,7 +26,7 @@
             app:layout_constraintVertical_bias="0.025"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="0dp" />
-
+    <!--
         <Button
             android:id="@+id/game2"
             android:layout_width="match_parent"
@@ -146,6 +146,7 @@
             app:layout_constraintVertical_bias="0.025"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="0dp" />
+            -->
     </LinearLayout>
 
 </FrameLayout>

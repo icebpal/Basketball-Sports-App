@@ -50,6 +50,23 @@ public class ViewGamesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        for (int x = 0; x < 2/*MainActivity.games.size()*/; x++){
+            Button newButton = new Button(this);
+            String s = "test string"; //MainActivity.games[x].date + " - " + MainActivity.team.team_name + " vs. " + MainActivity.games[x].opponent;
+            newButton.setText(s);
+            newButton.setId(x);
+            newButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), ChosePlayerActivity.class);
+                    intent.putExtra("game num", view.getId());
+                    startActivity(intent);
+                }
+            });
+            layout.addView(newButton);
+        }
+
 //        add_game.setOnClickListener(new View.OnClickListener(){
 //            @Override
 //            public void onClick(View view) {

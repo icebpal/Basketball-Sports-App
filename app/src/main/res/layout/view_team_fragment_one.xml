@@ -60,7 +60,7 @@
                 android:text="@string/points"
                 android:textSize="16sp" />
         </TableRow>
-
+<!--
         <TableRow>
 
             <TextView
@@ -630,7 +630,7 @@
                 android:text="@string/tempPoints"
                 android:textSize="15sp" />
         </TableRow>
-
+-->
     </TableLayout>
 
 
