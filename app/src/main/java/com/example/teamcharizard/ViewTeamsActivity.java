@@ -14,6 +14,12 @@ public class ViewTeamsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fragment fr;
+        fr = new ViewTeamsFragmentOne();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.team_stats_frag_container, fr);
+        transaction.commit();
         setContentView(R.layout.activity_view_teams);
     }
 
@@ -21,29 +27,20 @@ public class ViewTeamsActivity extends AppCompatActivity {
 
         Fragment fr;
 
-//        if(view == findViewById(R.id.team1_button)){
-//            fr = new ViewTeamsFragmentOne();
-//        }else{
-//            fr = new ViewTeamsFragmentTwo();
-//        }
         if(view == findViewById(R.id.team1_button)){
             fr = new ViewTeamsFragmentOne();
             FragmentManager manager = getSupportFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();
-            transaction.replace(R.id.fragment, fr);
+            transaction.replace(R.id.team_stats_frag_container, fr);
             transaction.commit();
         }
         if(view == findViewById(R.id.team2_button)){
             fr = new ViewTeamsFragmentTwo();
             FragmentManager manager = getSupportFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();
-            transaction.replace(R.id.fragment, fr);
+            transaction.replace(R.id.team_stats_frag_container, fr);
             transaction.commit();
         }
 
-//        FragmentManager manager = getSupportFragmentManager();
-//        FragmentTransaction transaction = manager.beginTransaction();
-//        transaction.replace(R.id.fragment, fr);
-//        transaction.commit();
     }
 }
