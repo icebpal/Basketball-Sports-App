@@ -16,12 +16,19 @@ public class SummaryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
-        stats_button = (Button)findViewById(R.id.stats_button);
-        view_action_button = (Button)findViewById(R.id.view_action_table);
+        stats_button = (Button)findViewById(R.id.button);
+        view_action_button = (Button)findViewById(R.id.viewAction_button);
         view_action_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ChosePlayerActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ViewActionActivity.class);
+                startActivity(intent);
+            }
+        });
+        stats_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ViewTeamsActivity.class);
                 startActivity(intent);
             }
         });

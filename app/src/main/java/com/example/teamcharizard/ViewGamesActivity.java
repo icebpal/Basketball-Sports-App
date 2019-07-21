@@ -14,15 +14,14 @@ import android.widget.Toast;
 
 public class ViewGamesActivity extends AppCompatActivity {
     private Button game1_button;
-    private Button team_button;
-    private Button add_game;
+    private Button end_game1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_games);
         game1_button = (Button)findViewById(R.id.game1);
-//        add_game = (Button)findViewById(R.id.add_new_game);
+        end_game1 = (Button)findViewById(R.id.game2);
         LinearLayout layout = (LinearLayout)findViewById(R.id.layout);
         ScrollView scroll = (ScrollView)findViewById(R.id.scroll);
         Intent i = getIntent();
@@ -50,12 +49,12 @@ public class ViewGamesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        add_game.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), StartNewGameActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        end_game1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SummaryActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

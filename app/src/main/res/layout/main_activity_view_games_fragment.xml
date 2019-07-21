@@ -33,12 +33,12 @@
             <Button
                 android:id="@+id/game1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="38dp"
                 android:layout_marginBottom="8dp"
                 android:padding="10dp"
-                android:text="4/27  Vs. Purdue"
+                android:text="4/27  Purdue                                                             W"
                 android:textAlignment="viewStart"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 app:layout_constraintVertical_bias="0.025"
                 tools:layout_editor_absoluteX="0dp" />
 
@@ -48,9 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:padding="10dp"
-                android:text="4/23 Iowa"
+                android:text="4/23 Iowa                                                                   W"
                 android:textAlignment="viewStart"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 app:layout_constraintVertical_bias="0.025"
                 tools:layout_editor_absoluteX="0dp" />
 
@@ -60,23 +60,35 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:padding="10dp"
-                android:text="4/19 Michigan"
+                android:text="4/19 Michigan                                                          W"
                 android:textAlignment="viewStart"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 app:layout_constraintVertical_bias="0.025"
                 tools:layout_editor_absoluteX="0dp" />
 
-            <!--<Button-->
-                <!--android:id="@+id/game4"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginBottom="8dp"-->
-                <!--android:padding="10dp"-->
-                <!--android:text="4/15 Purdue"-->
-                <!--android:textAlignment="viewStart"-->
-                <!--android:textSize="15sp"-->
-                <!--app:layout_constraintVertical_bias="0.025"-->
-                <!--tools:layout_editor_absoluteX="0dp" />-->
+            <Button
+                android:id="@+id/game4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="10dp"
+                android:text="4/27  Purdue                                                             L"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                app:layout_constraintVertical_bias="0.025"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/game5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="10dp"
+                android:text="4/19 Michigan                                                          L"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                app:layout_constraintVertical_bias="0.025"
+                tools:layout_editor_absoluteX="0dp" />
 
 
         </LinearLayout>
