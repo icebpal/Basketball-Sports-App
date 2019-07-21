@@ -18,8 +18,8 @@ public class Globals extends Application {
     public Player player10 = new Player();
     public Player player11 = new Player();
     public Player player12 = new Player();
-    public Game gamesList;
-
+    public Game gamesList = new Game();
+    public Player getPlayer1() {return player1; }
 
     public Team getOurTeam(){
         return our_team;

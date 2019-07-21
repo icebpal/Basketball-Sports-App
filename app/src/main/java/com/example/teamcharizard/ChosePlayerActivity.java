@@ -14,8 +14,7 @@ import android.widget.RadioGroup;
 
 public class ChosePlayerActivity extends AppCompatActivity {
 
-    private RadioButton player_1, player_2, player_3, player_4, player_5, action1, action2, action3,
-            action4, action5, action6, action7, action8, action9, action10;
+    private RadioButton player_1, player_2, player_3, player_4, player_5;
     private Button viewAction_button, submit_button;
     private RadioGroup player_group, action_group;
     private int prevPressed;
@@ -32,16 +31,6 @@ public class ChosePlayerActivity extends AppCompatActivity {
         player_3 = (RadioButton)findViewById(R.id.chose_player_button3);
         player_4 = (RadioButton)findViewById(R.id.chose_player_button4);
         player_5 = (RadioButton)findViewById(R.id.chose_player_button5);
-        action1 = (RadioButton)findViewById(R.id.stat1);
-        action2 = (RadioButton)findViewById(R.id.stat2);
-        action3 = (RadioButton)findViewById(R.id.stat3);
-        action4 = (RadioButton)findViewById(R.id.stat4);
-        action5 = (RadioButton)findViewById(R.id.stat5);
-        action6 = (RadioButton)findViewById(R.id.stat6);
-        action7 = (RadioButton)findViewById(R.id.stat7);
-        action8 = (RadioButton)findViewById(R.id.stat8);
-        action9 = (RadioButton)findViewById(R.id.stat9);
-        action10 = (RadioButton)findViewById(R.id.stat10);
         viewAction_button = (Button)findViewById(R.id.viewAction_button);
         submit_button = (Button)findViewById(R.id.submit_chose_player);
         TextView stats_button = findViewById(R.id.button);
@@ -69,70 +58,76 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 int playerNum = -1;
                 Log.v("player", Integer.toString(player_group.getCheckedRadioButtonId()));
                 Log.v("action", Integer.toString(action_group.getCheckedRadioButtonId()));
-                /*if (action_group.getCheckedRadioButtonId() == -1){
+                if (action_group.getCheckedRadioButtonId() == -1){
                     Log.v("action", Integer.toString(action_group.getCheckedRadioButtonId()));
-                }else{
-                    selectedAction.getText().toString();
+                }else {
+                    action = selectedAction.getText().toString();
+                    Log.v("action", action);
+                }
+                if (player_group.getCheckedRadioButtonId() != -1){
                     playerNum = Integer.parseInt(selectedPlayer.getText().toString());
-                }*/
-                /*int playerOffset = 0;
+                }
+                int playerOffset = 0;
                 TextView textView;
                 Integer x;
-                while (playerNum != g.gamesList.playersActions[playerOffset].playerNumber){
+                /*while (playerNum != g.gamesList.pActions[playerOffset].playerNumber){
                     playerOffset++;
-                }
+                }*/
                 switch(action) {
-                    case "opp 3pt fg":
+                    case "Opp 3pt fg":
                         textView = (TextView) findViewById(R.id.score2);
                         x = Integer.parseInt(textView.getText().toString());
                         x += 3;
                         textView.setText(x.toString());
+
+                        Log.v("3pt fg", Integer.toString(action_group.getCheckedRadioButtonId()));
                         break;
-                    case "opp 2pt fg":
+                    case "Opp 2pt fg":
                         textView = (TextView) findViewById(R.id.score2);
                         x = Integer.parseInt(textView.getText().toString());
                         x += 2;
                         textView.setText(x.toString());
+                        Log.v("2pt fg", Integer.toString(action_group.getCheckedRadioButtonId()));
                         break;
                     case "3pt fg made":
                         textView = (TextView) findViewById(R.id.score1);
                         x = Integer.parseInt(textView.getText().toString());
                         x += 3;
                         textView.setText(x.toString());
-                        g.gamesList.playersActions[playerOffset].threeMade += 1;
+                        g.gamesList.pActions[playerOffset].threeMade += 1;
                         break;
                     case "3pt fg missed":
-                        g.gamesList.playersActions[playerOffset].threeMissed += 1;
+                        g.gamesList.pActions[playerOffset].threeMissed += 1;
                         break;
                     case "2pt fg made":
                         textView = (TextView) findViewById(R.id.score1);
                         x = Integer.parseInt(textView.getText().toString());
                         x += 2;
                         textView.setText(x.toString());
-                        g.gamesList.playersActions[playerOffset].fgMade += 1;
+                        g.gamesList.pActions[playerOffset].fgMade += 1;
                         // need to do the global variations for all of these
                         break;
                     case "2pt fg missed":
-                        g.gamesList.playersActions[playerOffset].fgMissed += 1;
+                        g.gamesList.pActions[playerOffset].fgMissed += 1;
                         break;
                     case "ft made":
-                        g.gamesList.playersActions[playerOffset].ftMade += 1;
+                        g.gamesList.pActions[playerOffset].ftMade += 1;
                         break;
                     case "ft missed":
-                        g.gamesList.playersActions[playerOffset].ftMissed += 1;
+                        g.gamesList.pActions[playerOffset].ftMissed += 1;
                         break;
-                    case "rebound":
-                        g.gamesList.playersActions[playerOffset].rebounds += 1;
+                    case "Rebound":
+                        g.gamesList.pActions[playerOffset].rebounds += 1;
                         break;
-                    case "steal":
-                        g.gamesList.playersActions[playerOffset].steals += 1;
+                    case "Steal":
+                        g.gamesList.pActions[playerOffset].steals += 1;
                         break;
-                    case "block":
-                        g.gamesList.playersActions[playerOffset].blocks += 1;
+                    case "Block":
+                        g.gamesList.pActions[playerOffset].blocks += 1;
                         break;
                     default:
                         break;
-                }*/
+                }
             }
         });
 
