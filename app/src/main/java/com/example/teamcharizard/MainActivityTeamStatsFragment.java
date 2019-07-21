@@ -25,7 +25,7 @@ public class MainActivityTeamStatsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.main_activity_team_stats_fragment, container, false);
-        more_info_button = (Button)v.findViewById(R.id.more_info_button);
+        more_info_button = (Button)v.findViewById(R.id.more_info_button_1);
         more_info_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
