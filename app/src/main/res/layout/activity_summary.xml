@@ -14,43 +14,46 @@
             android:id="@+id/team1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="UIUC"
-            android:textSize="40sp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="25dp"
-            />
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="20dp"
+            android:text="UIUC"
+            android:textColor="#FF8400"
+            android:textColorLink="#FF5722"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/team2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="Other"
-            android:textSize="40sp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="25dp"
-            />
+            android:layout_marginEnd="25dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="20dp"
+            android:text="PURDUE"
+            android:textColor="#2167F3"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/score1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/team1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="65dp"
+            android:layout_marginBottom="60dp"
             android:text="108"
             android:textSize="48sp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="70dp"
-            android:layout_marginBottom="60dp"
-            android:layout_below="@id/team1"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/dash"
@@ -67,54 +70,54 @@
             android:id="@+id/score2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="86"
-            android:textSize="48sp"
+            android:layout_below="@id/team2"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="60dp"
-            android:layout_below="@id/team2"
-            />
+            android:text="86"
+            android:textSize="48sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/stats"
-            android:textSize="36sp"
-            android:padding="30dp"
+            android:layout_width="124dp"
+            android:layout_height="97dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
-            android:layout_marginEnd="50dp"
-            />
+            android:layout_marginStart="63dp"
+            android:layout_marginEnd="62dp"
+            android:layout_marginBottom="62dp"
+            android:padding="30dp"
+            android:text="@string/stats"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/viewAction_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="124dp"
+            android:layout_height="97dp"
             android:layout_alignBaseline="@id/button"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="63dp"
+            android:layout_marginBottom="62dp"
             android:padding="30dp"
             android:text="Actions"
-            android:textSize="36sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/firstQuarter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/score1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:paddingBottom="20dp"
             android:text="1st"
             android:textSize="36sp"
-            android:layout_below="@id/score1"
-            android:layout_marginStart="50dp"
-            android:layout_alignParentStart="true"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/score3"
@@ -161,14 +164,14 @@
             android:id="@+id/secondQuarter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/score2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
+            android:paddingEnd="20dp"
             android:paddingBottom="20dp"
             android:text="2nd"
             android:textSize="36sp"
-            android:layout_below="@id/score2"
-            android:layout_alignParentEnd="true"
-            android:paddingEnd="20dp"
-            android:layout_marginEnd="50dp"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/score5"
@@ -211,15 +214,15 @@
             android:id="@+id/thirdQuarter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3rd"
-            android:textSize="36sp"
             android:layout_below="@id/score4"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="50dp"
             android:paddingStart="20dp"
-            android:paddingBottom="20dp"
             android:paddingEnd="20dp"
-            android:layout_alignParentStart="true"
-            />
+            android:paddingBottom="20dp"
+            android:text="3rd"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/score7"
@@ -262,13 +265,14 @@
             android:id="@+id/fourthQuarter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp"
-            android:text="4th"
-            android:textSize="36sp"
             android:layout_below="@id/score5"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="50dp"
-            android:paddingEnd="20dp"/>
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            android:text="4th"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/score9"
