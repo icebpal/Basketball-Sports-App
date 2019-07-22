@@ -47,6 +47,7 @@ public class ViewTeamsFragmentOne extends Fragment {
                 //Toast.makeText(getActivity(), num.toString(), Toast.LENGTH_SHORT).show();
             }
         }
+        tl.requestLayout();
         return inflater.inflate(R.layout.view_team_fragment_one, container, false);
     }
 

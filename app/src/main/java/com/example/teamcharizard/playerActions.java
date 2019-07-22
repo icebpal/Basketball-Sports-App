@@ -1,16 +1,16 @@
 package com.example.teamcharizard;
 
 public class playerActions {
-    public int playerNumber;
-    public int fgMade;
-    public int fgMissed;
-    public int ftMade;
-    public int ftMissed;
-    public int threeMade;
-    public int threeMissed;
-    public int steals;
-    public int rebounds;
-    public int blocks;
+    public Integer playerNumber;
+    public Integer fgMade;
+    public Integer fgMissed;
+    public Integer ftMade;
+    public Integer ftMissed;
+    public Integer threeMade;
+    public Integer threeMissed;
+    public Integer steals;
+    public Integer rebounds;
+    public Integer blocks;
     playerActions(){
         playerNumber = -1;
         fgMade = 0;

@@ -48,12 +48,6 @@
                                android:padding="6dip"
                                android:textSize="17sp"
                                android:textStyle="bold"/>
-                           <TextView
-                               android:text="@string/time"
-                               android:padding="6dip"
-                               android:textSize="17sp"
-                               android:textStyle="bold"/>
-
                        </TableRow>
                  <!--      <TableRow>
                            <TextView

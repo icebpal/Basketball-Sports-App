@@ -229,6 +229,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ViewActionActivity.class);
+                intent.putExtra("game num", gameNum);
                 startActivity(intent);
             }
         });
@@ -238,6 +239,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ViewTeamsActivity.class);
+                intent.putExtra("game num", gameNum);
                 startActivity(intent);
             }
         });

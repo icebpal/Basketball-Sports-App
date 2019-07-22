@@ -1,13 +1,14 @@
 package com.example.teamcharizard;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.util.Log;
+import android.view.Gravity;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 public class ViewTeamsActivity extends AppCompatActivity {
 
@@ -15,35 +16,73 @@ public class ViewTeamsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_teams);
-    }
-
-    public void selectFrag(View view){
-
-        Fragment fr;
-
-//        if(view == findViewById(R.id.team1_button)){
-//            fr = new ViewTeamsFragmentOne();
-//        }else{
-//            fr = new ViewTeamsFragmentTwo();
-//        }
-        if(view == findViewById(R.id.team1_button)){
-            fr = new ViewTeamsFragmentOne();
-            FragmentManager manager = getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            transaction.replace(R.id.fragment, fr);
-            transaction.commit();
+        int gameNum = getIntent().getIntExtra("game num", -1);
+        if (gameNum == -1) {return;}
+        Globals g = (Globals)getApplication();
+        TableLayout tl = (TableLayout)findViewById(R.id.view_teams_table);
+        if (true){
+            if (g.playerList.length > 0 ){
+                for (int x = 0; x < g.gamesList.get(gameNum).pActions.length; x++){
+                    TableRow tr = new TableRow(this);
+                    tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    TextView tv = new TextView(this);
+                    playerActions player = g.gamesList.get(gameNum).pActions[x];
+                    tv.setText(Integer.toString(player.playerNumber)); /* get the input from the game action list */
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    tv = new TextView(this);
+                    Integer Fg =player.fgMade + player.fgMissed;
+                    String fg = player.fgMade.toString() + "/" + Fg.toString();
+                    tv.setText(fg);
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    tv = new TextView(this);
+                    Fg = player.threeMade + player.threeMissed;
+                    fg = player.threeMade.toString() + "/" + Fg.toString();
+                    tv.setText(fg);
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    tv = new TextView(this);
+                    Fg = player.ftMade + player.ftMissed;
+                    fg = player.ftMade.toString() + "/" + Fg.toString();
+                    tv.setText(fg);
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    tv = new TextView(this);
+                    tv.setText(player.rebounds.toString());
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    tv = new TextView(this);
+                    tv.setText(player.steals.toString());
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    tv = new TextView(this);
+                    tv.setText(player.blocks.toString());
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    tv = new TextView(this);
+                    tv.setText("0");
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    tv = new TextView(this);
+                    Fg = player.ftMade + 2 * player.fgMade + 3 * player.threeMade;
+                    tv.setText(Fg.toString());
+                    tv.setTextColor(Color.BLACK);
+                    tv.setGravity(Gravity.START);
+                    tr.addView(tv);
+                    Log.v("made it", "here");
+                    tl.addView(tr);
+                }
+            }
         }
-        if(view == findViewById(R.id.team2_button)){
-            fr = new ViewTeamsFragmentTwo();
-            FragmentManager manager = getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            transaction.replace(R.id.fragment, fr);
-            transaction.commit();
-        }
-
-//        FragmentManager manager = getSupportFragmentManager();
-//        FragmentTransaction transaction = manager.beginTransaction();
-//        transaction.replace(R.id.fragment, fr);
-//        transaction.commit();
+        tl.requestLayout();
     }
 }
