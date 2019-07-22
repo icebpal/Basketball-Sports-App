@@ -13,10 +13,10 @@ import android.widget.Toast;
 import android.widget.RadioGroup;
 
 public class ChosePlayerActivity extends AppCompatActivity {
-
+    private RadioGroup.OnCheckedChangeListener listener1, listener2, listener3;
     private RadioButton player_1, player_2, player_3, player_4, player_5;
     private Button viewAction_button, submit_button;
-    private RadioGroup player_group, action_group;
+    private RadioGroup player_group, action_group1, action_group2;
     private int prevPressed;
     static String number =  "Player Number";
     private Integer ADD_STATS_ACTIVITY_REQUEST = 1;
@@ -24,8 +24,13 @@ public class ChosePlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chose_player);
+        Globals g = (Globals) getApplication();
         player_group = (RadioGroup)findViewById(R.id.player_group);
-        action_group = (RadioGroup)findViewById(R.id.action_group);
+        player_group.clearCheck();
+        action_group1 = (RadioGroup)findViewById(R.id.action_group1);
+        action_group1.clearCheck();
+        action_group2 = (RadioGroup)findViewById(R.id.action_group2);
+        action_group2.clearCheck();
         player_1 = (RadioButton)findViewById(R.id.chose_player_button1);
         player_2 = (RadioButton)findViewById(R.id.chose_player_button2);
         player_3 = (RadioButton)findViewById(R.id.chose_player_button3);
@@ -34,8 +39,12 @@ public class ChosePlayerActivity extends AppCompatActivity {
         viewAction_button = (Button)findViewById(R.id.viewAction_button);
         submit_button = (Button)findViewById(R.id.submit_chose_player);
         TextView stats_button = findViewById(R.id.button);
+        TextView stats1 = (TextView)findViewById(R.id.score1);
+        stats1.setText(g.gamesList.ourScore.toString());
+        TextView stats2 = (TextView)findViewById(R.id.score2);
+        stats2.setText(g.gamesList.theirScore.toString());
         RadioButton[] players= {player_1, player_2, player_3, player_4, player_5};
-        player_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        listener1 = new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup arg0, int selectedId) {
                     int temp = player_group.getCheckedRadioButtonId();
@@ -47,19 +56,48 @@ public class ChosePlayerActivity extends AppCompatActivity {
                     }
                     prevPressed = temp;
                 }
-            });
+            };
+        player_group.setOnCheckedChangeListener(listener1);
+        listener2 = new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != -1) {
+                    action_group2.setOnCheckedChangeListener(null);
+                    action_group2.clearCheck();
+                    action_group2.setOnCheckedChangeListener(listener3);
+                    Log.e("XXX2", "do the work");
+                }
+            }
+        };
+        listener3 = new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != -1) {
+                    action_group1.setOnCheckedChangeListener(null);
+                    action_group1.clearCheck();
+                    action_group1.setOnCheckedChangeListener(listener2);
+                    Log.e("XXX2", "do the work");
+                }
+            }
+        };
+        action_group1.setOnCheckedChangeListener(listener2);
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 RadioButton selectedPlayer = (RadioButton)findViewById(player_group.getCheckedRadioButtonId());
-                RadioButton selectedAction = (RadioButton)findViewById(action_group.getCheckedRadioButtonId());
+                RadioButton selectedAction;
+                if (action_group1.getCheckedRadioButtonId() != -1) {
+                    selectedAction = (RadioButton) findViewById(action_group1.getCheckedRadioButtonId());
+                }else{
+                    selectedAction = (RadioButton) findViewById(action_group2.getCheckedRadioButtonId());
+                }
                 Globals g = (Globals)getApplication();
                 String action = "";
                 int playerNum = -1;
                 Log.v("player", Integer.toString(player_group.getCheckedRadioButtonId()));
-                Log.v("action", Integer.toString(action_group.getCheckedRadioButtonId()));
-                if (action_group.getCheckedRadioButtonId() == -1){
-                    Log.v("action", Integer.toString(action_group.getCheckedRadioButtonId()));
+                Log.v("action", Integer.toString(action_group1.getCheckedRadioButtonId()));
+                if (action_group1.getCheckedRadioButtonId() == -1 && action_group2.getCheckedRadioButtonId() == -1){
+                    Log.v("action", Integer.toString(action_group1.getCheckedRadioButtonId()));
                 }else {
                     action = selectedAction.getText().toString();
                     Log.v("action", action);
@@ -75,59 +113,97 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 }*/
                 switch(action) {
                     case "Opp 3pt fg":
+                        g.gamesList.theirScore += 3;
                         textView = (TextView) findViewById(R.id.score2);
-                        x = Integer.parseInt(textView.getText().toString());
-                        x += 3;
-                        textView.setText(x.toString());
-
-                        Log.v("3pt fg", Integer.toString(action_group.getCheckedRadioButtonId()));
+                        textView.setText(g.gamesList.theirScore.toString());
                         break;
                     case "Opp 2pt fg":
+                        g.gamesList.theirScore += 2;
                         textView = (TextView) findViewById(R.id.score2);
-                        x = Integer.parseInt(textView.getText().toString());
-                        x += 2;
-                        textView.setText(x.toString());
-                        Log.v("2pt fg", Integer.toString(action_group.getCheckedRadioButtonId()));
+                        textView.setText(g.gamesList.theirScore.toString());
                         break;
                     case "3pt fg made":
+                        g.gamesList.ourScore += 3;
+                        g.gamesList.actions.add("3pt fg made");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
                         textView = (TextView) findViewById(R.id.score1);
-                        x = Integer.parseInt(textView.getText().toString());
-                        x += 3;
-                        textView.setText(x.toString());
+                        textView.setText(g.gamesList.ourScore.toString());
                         g.gamesList.pActions[playerOffset].threeMade += 1;
                         break;
                     case "3pt fg missed":
+                        g.gamesList.actions.add("3pt fg missed");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
                         g.gamesList.pActions[playerOffset].threeMissed += 1;
                         break;
                     case "2pt fg made":
+                        g.gamesList.actions.add("2pt fg made");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
+                        g.gamesList.ourScore += 2;
                         textView = (TextView) findViewById(R.id.score1);
-                        x = Integer.parseInt(textView.getText().toString());
-                        x += 2;
-                        textView.setText(x.toString());
+                        textView.setText(g.gamesList.ourScore.toString());
                         g.gamesList.pActions[playerOffset].fgMade += 1;
                         // need to do the global variations for all of these
                         break;
                     case "2pt fg missed":
+                        g.gamesList.actions.add("2pt fg missed");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
                         g.gamesList.pActions[playerOffset].fgMissed += 1;
                         break;
                     case "ft made":
+                        g.gamesList.actions.add("ft made");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
                         g.gamesList.pActions[playerOffset].ftMade += 1;
                         break;
                     case "ft missed":
+                        g.gamesList.actions.add("ft made");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
                         g.gamesList.pActions[playerOffset].ftMissed += 1;
                         break;
                     case "Rebound":
+                        g.gamesList.actions.add("Rebound");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
                         g.gamesList.pActions[playerOffset].rebounds += 1;
                         break;
                     case "Steal":
+                        g.gamesList.actions.add("Steal");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
                         g.gamesList.pActions[playerOffset].steals += 1;
                         break;
                     case "Block":
+                        g.gamesList.actions.add("Block");
+                        g.gamesList.quarter.add(g.gamesList.currQuarter);
+                        g.gamesList.player.add(playerNum);
                         g.gamesList.pActions[playerOffset].blocks += 1;
                         break;
                     default:
                         break;
                 }
+                player_group.setOnCheckedChangeListener(null);
+                action_group1.setOnCheckedChangeListener(null);
+                action_group2.setOnCheckedChangeListener(null);
+                player_group.clearCheck();
+                action_group1.clearCheck();
+                action_group2.clearCheck();
+                Button button;
+                if (prevPressed != 0) {
+                    button = (RadioButton)findViewById(prevPressed);
+                    button.setBackground(getResources().getDrawable(R.drawable.round_button_1));
+                    prevPressed = 0;
+                }
+                player_group.setOnCheckedChangeListener(listener1);
+                action_group1.setOnCheckedChangeListener(listener2);
+                action_group2.setOnCheckedChangeListener(listener3);
+                Log.v("action", g.gamesList.actions.lastElement());
+                Log.v("player", Integer.toString(g.gamesList.player.lastElement()));
+                Log.v("quarter", Integer.toString(g.gamesList.quarter.lastElement()));
             }
         });
 

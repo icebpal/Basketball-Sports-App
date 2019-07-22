@@ -3,11 +3,12 @@ package com.example.teamcharizard;
 import java.util.Vector;
 
 public class Game {
-    Vector actions;
-    Vector player;
-    Vector quarter;
+    Vector<String> actions;
+    Vector<Integer> player;
+    Vector<Integer> quarter;
+    Integer currQuarter;
     playerActions[] pActions;
-    int ourScore, theirScore;
+    Integer ourScore, theirScore;
     String s;
     Game(){
         pActions = new playerActions[12];
@@ -19,7 +20,7 @@ public class Game {
         quarter = new Vector();
         ourScore = 0;
         theirScore = 0;
-        s = "hello";
+        currQuarter = 1;
     }
 }
 
