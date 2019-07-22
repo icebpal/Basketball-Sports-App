@@ -14,48 +14,69 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/uiuc_icon"
+                android:layout_width="121dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:paddingBottom="20dp"
+                app:srcCompat="@drawable/uiuc_icon" />
+
             <TextView
-                android:text="@string/view_actions"
-                android:textSize="20sp"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="fill_horizontal"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_weight="1"
+                android:text="View Actions"
+                android:textColor="#050E38"
+                android:textSize="30sp"
+                android:textStyle="normal"
+                android:visibility="visible" />
         </LinearLayout>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
             android:layout_weight="1">
+
             <TableLayout
+                android:id="@+id/view_action_table"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:id="@+id/view_action_table">
-                       <TableRow>
-                           <TextView
-                               android:text="@string/player_and_team"
-                               android:padding="6dip"
-                               android:textSize="17sp"
-                               android:textStyle="bold"/>
-                           <TextView
-                               android:text="@string/action"
-                               android:padding="6dip"
-                               android:textSize="17sp"
-                               android:textStyle="bold"/>
-                           <TextView
-                               android:text="@string/quarter"
-                               android:padding="6dip"
-                               android:textSize="17sp"
-                               android:textStyle="bold"/>
-                           <TextView
-                               android:text="@string/time"
-                               android:padding="6dip"
-                               android:textSize="17sp"
-                               android:textStyle="bold"/>
+                android:gravity="center_horizontal">
 
-                       </TableRow>
-                 <!--      <TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:padding="6dip"
+                        android:text="@string/player_and_team"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:padding="6dip"
+                        android:text="@string/action"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:padding="6dip"
+                        android:text="@string/quarter"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:padding="6dip"
+                        android:text="@string/time"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+                <!--      <TableRow>
                            <TextView
                                android:id="@+id/view_action_player1"
                                android:text="@string/player_and_team1"
@@ -445,7 +466,7 @@
                                android:textSize="13sp"
                                />
                        </TableRow> -->
-                   </TableLayout>
-               </ScrollView>
-           </LinearLayout>
-       </androidx.constraintlayout.widget.ConstraintLayout>
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

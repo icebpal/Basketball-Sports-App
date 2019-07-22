@@ -24,9 +24,6 @@
         <activity android:name=".AddStatsActivity" />
         <activity android:name=".StartNewGameActivity" />
         <activity android:name=".SummaryActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
     </application>
 
