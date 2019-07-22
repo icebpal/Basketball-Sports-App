@@ -112,17 +112,18 @@ public class ChosePlayerActivity extends AppCompatActivity {
                     action = selectedAction.getText().toString();
                     Log.v("action", action);
                 }
+                int playerOffset = 0;
                 if (player_group.getCheckedRadioButtonId() != -1){
                     playerNum = Integer.parseInt(selectedPlayer.getText().toString());
+                    while (playerNum != g.gamesList.get(gameNum).pActions[playerOffset].playerNumber){
+                        playerOffset++;
+                    }
                 }else if (!(action.equals("Opp 2pt fg")) && !(action.equals("Opp 3pt fg"))){
                     return;
                 }
-                int playerOffset = 0;
+
                 TextView textView;
                 Integer x;
-                while (playerNum != g.gamesList.get(gameNum).pActions[playerOffset].playerNumber){
-                    playerOffset++;
-                }
                 switch(action) {
                     case "Opp 3pt fg":
                         g.gamesList.get(gameNum).theirScore += 3;
@@ -167,7 +168,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].fgMissed += 1;
-                        g.our_team.active_roster[playerOffset].ftMade += 1;
+                        g.our_team.active_roster[playerOffset].fgMissed += 1;
                         break;
                     case "ft made":
                         g.gamesList.get(gameNum).actions.add("ft made");

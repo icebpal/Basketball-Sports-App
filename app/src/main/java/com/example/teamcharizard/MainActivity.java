@@ -17,6 +17,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Fragment fr;
+        fr = new MainActivityTeamStatsFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.fragment_container, fr);
+        transaction.commit();
         start_game_button = (Button)findViewById(R.id.start_game_button);
         start_game_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragment, fr);
+        transaction.replace(R.id.fragment_container, fr);
         transaction.commit();
     }
 

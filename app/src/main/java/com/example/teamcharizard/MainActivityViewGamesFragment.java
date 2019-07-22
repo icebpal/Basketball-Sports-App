@@ -27,14 +27,14 @@ public class MainActivityViewGamesFragment extends Fragment {
         // Inflate the layout for this fragment
         Globals g= (Globals)getActivity().getApplication();
         View v = inflater.inflate(R.layout.main_activity_view_games_fragment, container, false);
-        current_game_button = (Button)v.findViewById(R.id.game1);
-        current_game_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), ChosePlayerActivity.class);
-                startActivity(intent);
-            }
-        });
+        //current_game_button = (Button)v.findViewById(R.id.game1);
+        //current_game_button.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        Intent intent = new Intent(getActivity().getApplicationContext(), ChosePlayerActivity.class);
+        //        startActivity(intent);
+        //    }
+        //});
         for (int x = 0; x < g.gamesList.size(); x++){
             LinearLayout layout = (LinearLayout) v.findViewById(R.id.layout);
             Button newButton = new Button(getActivity());
