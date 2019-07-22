@@ -27,10 +27,15 @@ public class StartNewGameActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                Globals g = (Globals)getApplication();
                 teamleft = team_1.getText().toString();
                 teamright = team_2.getText().toString();
                 datestring = date.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Game game = new Game();
+                game.theirName = teamright;
+                game.date = datestring;
+                g.gamesList.add(game);
                 intent.putExtra("LEFT", teamleft);
                 intent.putExtra("RIGHT",teamright);
                 intent.putExtra("DATE", datestring);

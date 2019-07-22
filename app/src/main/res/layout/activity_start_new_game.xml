@@ -23,7 +23,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:inputType="date|number"
-        android:text="Game Date" />
+        android:hint="Game Date" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:gravity="start"
-            android:autofillHints="@string/team1"
-            android:text="@string/team1"
+            android:hint="@string/team1"
+            android:text=""
              />
 
 
@@ -56,8 +56,8 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:autofillHints="@string/team2"
-            android:text="@string/team2"
+            android:hint="@string/team2"
+            android:text=""
              />
     </LinearLayout>
 

@@ -15,9 +15,9 @@ public class Game {
         for (int x = 0; x < 12; x++){
             pActions[x] = new playerActions();
         }
-        actions = new Vector();
-        player = new Vector();
-        quarter = new Vector();
+        actions = new Vector<String>();
+        player = new Vector<Integer>();
+        quarter = new Vector<Integer>();
         ourScore = 0;
         theirScore = 0;
         currQuarter = 1;

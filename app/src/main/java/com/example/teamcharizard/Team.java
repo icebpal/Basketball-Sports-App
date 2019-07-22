@@ -1,10 +1,10 @@
 package com.example.teamcharizard;
 
 public class Team {
-    String team_name;
+    public String team_name;
 
-    Player [] active_roster = new Player[5];
-    Player [] bench_roster = new Player[12];
+    public Player [] active_roster = new Player[5];
+    public Player [] bench_roster = new Player[12];
     //  Player full_roster[] = new Player[100];
 
 
