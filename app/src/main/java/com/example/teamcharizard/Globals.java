@@ -4,7 +4,7 @@ import android.app.Application;
 import java.util.Vector;
 
 public class Globals extends Application {
-    public Team our_team = new Team("helloworld");
+    public Team our_team = new Team("Illinois");
 
     public Player player1 = new Player();
     public Player player2 = new Player();
@@ -18,7 +18,7 @@ public class Globals extends Application {
     public Player player10 = new Player();
     public Player player11 = new Player();
     public Player player12 = new Player();
-    public Game gamesList = new Game();
+    public Vector<Game> gamesList;
     public Player getPlayer1() {return player1; }
 
     public Team getOurTeam(){

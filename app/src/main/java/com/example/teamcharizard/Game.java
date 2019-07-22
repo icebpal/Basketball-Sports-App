@@ -9,7 +9,7 @@ public class Game {
     Integer currQuarter;
     playerActions[] pActions;
     Integer ourScore, theirScore;
-    String s;
+    String date, theirName;
     Game(){
         pActions = new playerActions[12];
         for (int x = 0; x < 12; x++){
@@ -21,6 +21,7 @@ public class Game {
         ourScore = 0;
         theirScore = 0;
         currQuarter = 1;
+        date = "";
     }
 }
 
