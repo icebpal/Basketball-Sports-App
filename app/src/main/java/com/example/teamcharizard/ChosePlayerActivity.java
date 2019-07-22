@@ -25,7 +25,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chose_player);
-        gameNum = getIntent().getIntExtra("game num",-1);
+        gameNum = getIntent().getIntExtra("game num",0);
         Globals g = (Globals) getApplication();
         player_group = (RadioGroup)findViewById(R.id.player_group);
         player_group.clearCheck();
@@ -45,6 +45,15 @@ public class ChosePlayerActivity extends AppCompatActivity {
         stats1.setText(g.gamesList.get(gameNum).ourScore.toString());
         TextView stats2 = (TextView)findViewById(R.id.score2);
         stats2.setText(g.gamesList.get(gameNum).theirScore.toString());
+
+        Button swapplayerbutton = findViewById(R.id.swap_player_button);
+        player_1.setText(Integer.toString(g.our_team.active_roster[0].number));
+        player_2.setText(Integer.toString(g.our_team.active_roster[1].number));
+        player_3.setText(Integer.toString(g.our_team.active_roster[2].number));
+        player_4.setText(Integer.toString(g.our_team.active_roster[3].number));
+        player_5.setText(Integer.toString(g.our_team.active_roster[4].number));
+
+
         RadioButton[] players= {player_1, player_2, player_3, player_4, player_5};
         for (int x = 0; x < 12; x++){
             if (x < 5){
@@ -54,15 +63,32 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 g.gamesList.get(gameNum).pActions[x].playerNumber = g.our_team.bench_roster[x-5].number;
             }
         }
+
+
+
+
+        listener2 = new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != -1) {
+                    action_group2.setOnCheckedChangeListener(null);
+                    action_group2.clearCheck();
+                    action_group2.setOnCheckedChangeListener(listener3);
+                    Log.e("XXX2", "do the work");
+                }
+            }
+        };
+
+
         listener1 = new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup arg0, int selectedId) {
                     int temp = player_group.getCheckedRadioButtonId();
                     RadioButton button = (RadioButton)findViewById(temp);
-                    button.setBackground(getResources().getDrawable(R.drawable.round_button_2));
+                    button.setBackground(getResources().getDrawable(R.drawable.checkbox));
                     if (prevPressed != 0) {
                         button = (RadioButton)findViewById(prevPressed);
-                        button.setBackground(getResources().getDrawable(R.drawable.round_button_1));
+                        button.setBackground(getResources().getDrawable(R.drawable.checkbox));
                     }
                     prevPressed = temp;
                 }
@@ -91,6 +117,9 @@ public class ChosePlayerActivity extends AppCompatActivity {
             }
         };
         action_group1.setOnCheckedChangeListener(listener2);
+
+
+
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -217,7 +246,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 Button button;
                 if (prevPressed != 0) {
                     button = (RadioButton)findViewById(prevPressed);
-                    button.setBackground(getResources().getDrawable(R.drawable.round_button_1));
+                    button.setBackground(getResources().getDrawable(R.drawable.checkbox));
                     prevPressed = 0;
                 }
                 player_group.setOnCheckedChangeListener(listener1);
@@ -244,6 +273,16 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        swapplayerbutton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PlayerSwapActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
     public void onActivityResult(int activityCode, int resultCode, Intent intent){

@@ -11,73 +11,369 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="Choose 6 players"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="59dp" />
+        android:text="Choose 5 players"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"/>
+
+    <Button
+        android:id="@+id/team_ready_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Ready"
+        app:layout_constraintTop_toTopOf="@id/playerswaptitle"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="50dp" />
+
+
+
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id = "@+id/first_row_of_checkboxes"
-        app:layout_constraintTop_toBottomOf="@id/playerswaptitle"
-        android:layout_marginTop="50dp">
+        app:layout_constraintTop_toBottomOf="@+id/playerswaptitle"
+        android:layout_marginTop="25dp">
 
-            <CheckBox
-                android:id="@+id/player1_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/player1_name"
-                android:checked="true"
-                android:layout_weight = "1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
 
-            <CheckBox
-                android:id="@+id/player2_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/player2_name"
-                android:checked="true"
-                android:layout_weight = "1"/>
 
-            <CheckBox
-                android:id="@+id/player3_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/player3_name"
-                android:checked="true"
-                android:layout_weight = "1"/>
-        </LinearLayout>
+        <CheckBox
+            android:id="@+id/player1_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="0"
+            android:button="@drawable/checkbox" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <CheckBox
+            android:id="@+id/player2_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:button="@drawable/checkbox"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+
+        <CheckBox
+            android:id="@+id/player3_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:button="@drawable/checkbox"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/first_row_of_numbers"
+        app:layout_constraintTop_toTopOf="@+id/first_row_of_checkboxes">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player1_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player2_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player3_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/first_row_of_names"
+        app:layout_constraintTop_toBottomOf="@id/first_row_of_checkboxes">
+
+        <TextView
+            android:id="@+id/player1_name"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:id="@+id/player2_name"
+            android:layout_width="wrap_content"
+            android:text = ""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id="@+id/player3_name"
+            android:layout_width="wrap_content"
+            android:text = ""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+    </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id = "@+id/second_row_of_checkboxes"
-        app:layout_constraintTop_toBottomOf="@id/first_row_of_checkboxes"
-        android:layout_marginTop="125dp">
+        app:layout_constraintTop_toBottomOf="@+id/first_row_of_names"
+        android:layout_marginTop="25dp">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
 
         <CheckBox
             android:id="@+id/player4_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+            android:layout_weight = "0" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/player4_name"
             android:layout_weight = "1"/>
 
         <CheckBox
             android:id="@+id/player5_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+
+            android:layout_weight = "0"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/player5_name"
             android:layout_weight = "1"/>
+
 
         <CheckBox
             android:id="@+id/player6_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+            android:layout_weight = "0"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/player6_name"
+            android:layout_weight = "1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/second_row_of_numbers"
+        app:layout_constraintTop_toTopOf="@+id/second_row_of_checkboxes">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player4_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player5_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player6_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/second_row_of_names"
+        app:layout_constraintTop_toBottomOf="@+id/second_row_of_checkboxes">
+
+        <TextView
+            android:id="@+id/player4_name"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:id="@+id/player5_name"
+            android:layout_width="wrap_content"
+            android:text = ""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id="@+id/player6_name"
+            android:layout_width="wrap_content"
+            android:text = ""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height = "100dp"
+        android:id = "@+id/third_row_of_checkboxes"
+        app:layout_constraintTop_toBottomOf="@+id/second_row_of_names"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+
+        <CheckBox
+            android:id="@+id/player7_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+            android:layout_weight = "0" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <CheckBox
+            android:id="@+id/player8_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+
+        <CheckBox
+            android:id="@+id/player9_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight = "1"/>
     </LinearLayout>
 
@@ -85,73 +381,255 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id = "@+id/third_row_of_checkboxes"
-        app:layout_constraintTop_toBottomOf="@id/second_row_of_checkboxes"
-        android:layout_marginTop="125dp">
-
-        <CheckBox
-            android:id="@+id/player7_checkbox"
+        android:id = "@+id/third_row_of_numbers"
+        app:layout_constraintTop_toTopOf="@+id/third_row_of_checkboxes">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/placehold_player_name"
             android:layout_weight = "1"/>
 
-        <CheckBox
-            android:id="@+id/player8_checkbox"
+        <TextView
+            android:id = "@+id/player7_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/placehold_player_name"
             android:layout_weight = "1"/>
 
-        <CheckBox
-            android:id="@+id/player9_checkbox"
+        <TextView
+            android:id = "@+id/player8_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/placehold_player_name"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player9_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight = "1"/>
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/third_row_of_names"
+        app:layout_constraintTop_toBottomOf="@+id/third_row_of_checkboxes">
+
+        <TextView
+            android:id="@+id/player7_name"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:id="@+id/player8_name"
+            android:layout_width="wrap_content"
+            android:text = ""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id="@+id/player9_name"
+            android:layout_width="wrap_content"
+            android:text = ""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id = "@+id/fourth_row_of_checkboxes"
-        app:layout_constraintTop_toBottomOf="@id/third_row_of_checkboxes"
-        android:layout_marginTop="125dp">
+        app:layout_constraintTop_toBottomOf="@+id/third_row_of_names"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
 
         <CheckBox
             android:id="@+id/player10_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+            android:layout_weight = "0" />
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/placehold_player_name"
             android:layout_weight = "1"/>
 
         <CheckBox
             android:id="@+id/player11_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+
+            android:layout_weight = "0"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/placehold_player_name"
             android:layout_weight = "1"/>
+
 
         <CheckBox
             android:id="@+id/player12_checkbox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+            android:layout_weight = "0"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/placehold_player_name"
             android:layout_weight = "1"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/add_new_player_button"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="270dp"
-        android:gravity="center"
-        android:text="Add New Player"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fourth_row_of_checkboxes"/>
+        android:id = "@+id/fourth_row_of_numbers"
+        app:layout_constraintTop_toTopOf="@+id/fourth_row_of_checkboxes">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player10_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player11_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id = "@+id/player12_number"
+            android:text = ""
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textSize= "60sp"
+            android:typeface = "serif"
+            android:gravity="center"
+            android:textStyle = "bold|italic"
+            android:textColor="@color/textNumber"
+            android:layout_weight = "0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/fourth_row_of_names"
+        app:layout_constraintTop_toBottomOf="@+id/fourth_row_of_checkboxes">
+
+        <TextView
+            android:id="@+id/player10_name"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:id="@+id/player11_name"
+            android:layout_width="wrap_content"
+            android:text = ""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+
+        <TextView
+            android:id="@+id/player12_name"
+            android:layout_width="wrap_content"
+            android:text = ""
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"/>
+    </LinearLayout>
+
+
+    <!--<Button-->
+    <!--android:id="@+id/add_new_player_button"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="1dp"-->
+    <!--android:layout_marginTop="25dp"-->
+    <!--android:layout_marginEnd="270dp"-->
+    <!--android:gravity="center"-->
+    <!--android:text="Add New Player"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/fourth_row_of_checkboxes"/>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

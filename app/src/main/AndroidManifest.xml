@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".ViewMyTeamActivity"></activity>
         <activity android:name=".ViewActionActivity" />
-        <activity android:name=".PickTeamActivity" />
+        <activity android:name=".PlayerSwapActivity" />
         <activity android:name=".ViewTeamsActivity" />
         <activity android:name=".ViewGamesActivity" />
         <activity android:name=".ChosePlayerActivity" />
