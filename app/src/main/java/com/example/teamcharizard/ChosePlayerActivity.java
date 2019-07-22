@@ -46,6 +46,14 @@ public class ChosePlayerActivity extends AppCompatActivity {
         TextView stats2 = (TextView)findViewById(R.id.score2);
         stats2.setText(g.gamesList.get(gameNum).theirScore.toString());
         RadioButton[] players= {player_1, player_2, player_3, player_4, player_5};
+        for (int x = 0; x < 12; x++){
+            if (x < 5){
+                g.gamesList.get(gameNum).pActions[x].playerNumber = g.our_team.active_roster[x].number;
+                players[x].setText(Integer.toString(g.our_team.active_roster[x].number));
+            } else{
+                g.gamesList.get(gameNum).pActions[x].playerNumber = g.our_team.bench_roster[x-5].number;
+            }
+        }
         listener1 = new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup arg0, int selectedId) {
@@ -106,13 +114,15 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 }
                 if (player_group.getCheckedRadioButtonId() != -1){
                     playerNum = Integer.parseInt(selectedPlayer.getText().toString());
+                }else if (!(action.equals("Opp 2pt fg")) && !(action.equals("Opp 3pt fg"))){
+                    return;
                 }
                 int playerOffset = 0;
                 TextView textView;
                 Integer x;
-                /*while (playerNum != g.gamesList.pActions[playerOffset].playerNumber){
+                while (playerNum != g.gamesList.get(gameNum).pActions[playerOffset].playerNumber){
                     playerOffset++;
-                }*/
+                }
                 switch(action) {
                     case "Opp 3pt fg":
                         g.gamesList.get(gameNum).theirScore += 3;
@@ -132,12 +142,14 @@ public class ChosePlayerActivity extends AppCompatActivity {
                         textView = (TextView) findViewById(R.id.score1);
                         textView.setText(g.gamesList.get(gameNum).ourScore.toString());
                         g.gamesList.get(gameNum).pActions[playerOffset].threeMade += 1;
+                        g.our_team.active_roster[playerOffset].threeMade += 1;
                         break;
                     case "3pt fg missed":
                         g.gamesList.get(gameNum).actions.add("3pt fg missed");
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].threeMissed += 1;
+                        g.our_team.active_roster[playerOffset].threeMissed += 1;
                         break;
                     case "2pt fg made":
                         g.gamesList.get(gameNum).actions.add("2pt fg made");
@@ -147,6 +159,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
                         textView = (TextView) findViewById(R.id.score1);
                         textView.setText(g.gamesList.get(gameNum).ourScore.toString());
                         g.gamesList.get(gameNum).pActions[playerOffset].fgMade += 1;
+                        g.our_team.active_roster[playerOffset].fgMade += 1;
                         // need to do the global variations for all of these
                         break;
                     case "2pt fg missed":
@@ -154,36 +167,42 @@ public class ChosePlayerActivity extends AppCompatActivity {
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].fgMissed += 1;
+                        g.our_team.active_roster[playerOffset].ftMade += 1;
                         break;
                     case "ft made":
                         g.gamesList.get(gameNum).actions.add("ft made");
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].ftMade += 1;
+                        g.our_team.active_roster[playerOffset].ftMade += 1;
                         break;
                     case "ft missed":
                         g.gamesList.get(gameNum).actions.add("ft made");
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].ftMissed += 1;
+                        g.our_team.active_roster[playerOffset].ftMissed += 1;
                         break;
                     case "Rebound":
                         g.gamesList.get(gameNum).actions.add("Rebound");
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].rebounds += 1;
+                        g.our_team.active_roster[playerOffset].rebounds += 1;
                         break;
                     case "Steal":
                         g.gamesList.get(gameNum).actions.add("Steal");
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].steals += 1;
+                        g.our_team.active_roster[playerOffset].steals += 1;
                         break;
                     case "Block":
                         g.gamesList.get(gameNum).actions.add("Block");
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].blocks += 1;
+                        g.our_team.active_roster[playerOffset].blocks += 1;
                         break;
                     default:
                         break;
@@ -203,9 +222,6 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 player_group.setOnCheckedChangeListener(listener1);
                 action_group1.setOnCheckedChangeListener(listener2);
                 action_group2.setOnCheckedChangeListener(listener3);
-                Log.v("action", g.gamesList.get(gameNum).actions.lastElement());
-                Log.v("player", Integer.toString(g.gamesList.get(gameNum).player.lastElement()));
-                Log.v("quarter", Integer.toString(g.gamesList.get(gameNum).quarter.lastElement()));
             }
         });
 

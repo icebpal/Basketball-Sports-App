@@ -21,6 +21,12 @@ public class Team {
         }
     }
 
+    public int min(int a, int b){
+        if (a < b){
+            return a;
+        }
+        return b;
+    }
     public Team(String name, Player[] active, Player[] bench) {
         team_name = name;
         set_team_rosters(active, bench);
@@ -28,10 +34,10 @@ public class Team {
 
 
     public void set_team_rosters(Player[] active, Player[] bench){
-        for (int i=0; i<5; i++){
+        for (int i=0; i< min(5, active.length); i++){
             active_roster[i] = active[i];
         }
-        for (int i=0; i<12; i++){
+        for (int i=0; i< min(12, bench.length); i++){
             bench_roster[i] = bench[i];
         }
         return;

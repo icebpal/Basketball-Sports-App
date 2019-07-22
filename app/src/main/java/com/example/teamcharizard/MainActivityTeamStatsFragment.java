@@ -42,50 +42,64 @@ public class MainActivityTeamStatsFragment extends Fragment {
         });
         Globals g = (Globals)getActivity().getApplication();
         TableLayout tl = (TableLayout) v.findViewById(R.id.team_stats_table);
-        Toast.makeText(getContext(), g.playerList[11].name, Toast.LENGTH_SHORT).show();
+        if (g.our_team.active_roster[0] == null) {
+            Player[] starting = {g.player1, g.player2, g.player3, g.player4, g.player5};
+            Player[] bench = {g.player6, g.player7, g.player8, g.player9, g.player10, g.player11, g.player12};
+            g.our_team.set_team_rosters(starting, bench);
+        }else if (g.our_team.active_roster[0].name == "Default Name"){
+            Player[] starting = {g.player1, g.player2, g.player3, g.player4, g.player5};
+            Player[] bench = {g.player6, g.player7, g.player8, g.player9, g.player10, g.player11, g.player12};
+            g.our_team.set_team_rosters(starting, bench);
+        }
         if (true){
             if (g.playerList.length > 0 ){
                 for (int x = 0; x < g.playerList.length /* TeamProfileActivity.gameList[game_num] */; x++){
                     TableRow tr = new TableRow(getActivity());
                     tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
                     TextView tv = new TextView(getActivity());
-                    tv.setText(g.playerList[x].name); /* get the input from the game action list */
+                    Player player;
+                    if (x < 5){
+                        player = g.our_team.active_roster[x];
+                    } else{
+                        player = g.our_team.bench_roster[x-5];
+                    }
+                    tv.setText(player.name); /* get the input from the game action list */
                     tv.setTextColor(Color.BLACK);
                     tv.setGravity(Gravity.START);
                     tr.addView(tv);
                     tv = new TextView(getActivity());
-                    Integer Fg = g.playerList[x].fgMade + g.playerList[x].fgMissed;
-                    String fg = g.playerList[x].fgMade.toString() + "/" + Fg.toString();
+                    Integer Fg =player.fgMade + player.fgMissed;
+                    String fg = player.fgMade.toString() + "/" + Fg.toString();
                     tv.setText(fg);
                     tv.setTextColor(Color.BLACK);
                     tv.setGravity(Gravity.START);
                     tr.addView(tv);
                     tv = new TextView(getActivity());
-                    Fg = g.playerList[x].threeMade + g.playerList[x].threeMissed;
-                    fg = g.playerList[x].threeMade.toString() + "/" + Fg.toString();
+                    Fg = player.threeMade + player.threeMissed;
+                    fg = player.threeMade.toString() + "/" + Fg.toString();
                     tv.setText(fg);
                     tv.setTextColor(Color.BLACK);
                     tv.setGravity(Gravity.START);
                     tr.addView(tv);
                     tv = new TextView(getActivity());
-                    Fg = g.playerList[x].ftMade + g.playerList[x].ftMissed;
-                    fg = g.playerList[x].ftMade.toString() + "/" + Fg.toString();
+                    Fg = player.ftMade + player.ftMissed;
+                    fg = player.ftMade.toString() + "/" + Fg.toString();
                     tv.setText(fg);
                     tv.setTextColor(Color.BLACK);
                     tv.setGravity(Gravity.START);
                     tr.addView(tv);
                     tv = new TextView(getActivity());
-                    tv.setText(g.playerList[x].rebounds.toString());
+                    tv.setText(player.rebounds.toString());
                     tv.setTextColor(Color.BLACK);
                     tv.setGravity(Gravity.START);
                     tr.addView(tv);
                     tv = new TextView(getActivity());
-                    tv.setText(g.playerList[x].steals.toString());
+                    tv.setText(player.steals.toString());
                     tv.setTextColor(Color.BLACK);
                     tv.setGravity(Gravity.START);
                     tr.addView(tv);
                     tv = new TextView(getActivity());
-                    tv.setText(g.playerList[x].blocks.toString());
+                    tv.setText(player.blocks.toString());
                     tv.setTextColor(Color.BLACK);
                     tv.setGravity(Gravity.START);
                     tr.addView(tv);
@@ -95,7 +109,7 @@ public class MainActivityTeamStatsFragment extends Fragment {
                     tv.setGravity(Gravity.START);
                     tr.addView(tv);
                     tv = new TextView(getActivity());
-                    Fg = g.playerList[x].ftMade + 2 * g.playerList[x].fgMade + 3 * g.playerList[x].threeMade;
+                    Fg = player.ftMade + 2 * player.fgMade + 3 * player.threeMade;
                     tv.setText(Fg.toString());
                     tv.setTextColor(Color.BLACK);
                     tv.setGravity(Gravity.START);

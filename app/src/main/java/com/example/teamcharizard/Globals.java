@@ -22,7 +22,6 @@ public class Globals extends Application {
     public Player[] playerList = {player1, player2, player3, player4, player5, player6, player7,
             player8, player9, player10, player11, player12};
     public Vector<Game> gamesList = new Vector<Game>();
-    public Player getPlayer1() {return player1; }
 
     public Team getOurTeam(){
         return our_team;
