@@ -85,10 +85,10 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 public void onCheckedChanged(RadioGroup arg0, int selectedId) {
                     int temp = player_group.getCheckedRadioButtonId();
                     RadioButton button = (RadioButton)findViewById(temp);
-                    button.setBackground(getResources().getDrawable(R.drawable.round_button_2));
+                    button.setBackground(getResources().getDrawable(R.drawable.checkbox));
                     if (prevPressed != 0) {
                         button = (RadioButton)findViewById(prevPressed);
-                        button.setBackground(getResources().getDrawable(R.drawable.round_button_1));
+                        button.setBackground(getResources().getDrawable(R.drawable.checkbox));
                     }
                     prevPressed = temp;
                 }
@@ -245,7 +245,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 Button button;
                 if (prevPressed != 0) {
                     button = (RadioButton)findViewById(prevPressed);
-                    button.setBackground(getResources().getDrawable(R.drawable.round_button_1));
+                    button.setBackground(getResources().getDrawable(R.drawable.checkbox));
                     prevPressed = 0;
                 }
                 player_group.setOnCheckedChangeListener(listener1);
