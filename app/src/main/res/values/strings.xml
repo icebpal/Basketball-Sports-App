@@ -86,16 +86,30 @@
     <string name="addGame"> Add Game </string>
     <string name="choose"> Choose Game </string>
     <!--player 1-6 placeholdplayer name-->
-    <string name="player1_name">Brandi Beasley</string>
-    <string name="player2_name">Lyric Robins</string>
-    <string name="player3_name">Arieal Scott</string>
-    <string name="player4_name">Carolyn Waleski</string>
-    <string name="player5_name">Cierra Rice</string>
-    <string name="player6_name">Jeanae Terry</string>
-    <string name="placehold_player_name">Basket Ball</string>
-    <string name="password">Password</string>
-    <string name="coach_login">Coach Login</string>
-    <string name="username">Username</string>
+    <string name="player1_name">J-Naya Ephriam</string>
+    <string name="player2_name">Brandi Beasley</string>
+    <string name="player3_name">Lyric Robins</string>
+    <string name="player4_name">Arieal Scott</string>
+    <string name="player5_name">Carolyn Waleski</string>
+    <string name="player6_name">Cierra Rice</string>
+    <string name="player7_name">Jeanae Terry</string>
+    <string name="player8_name">Taylor Edwards</string>
+    <string name="player9_name">Petra Holesinska</string>
+    <string name="player10_name">Nancy Andritsopoulou</string>
+    <string name="player11_name">Mackenzie Blazek</string>
+    <string name="player12_name">Courtney Jones</string>
+
+
+    <string name="guard_position">Guard</string>
+    <string name="forward_position">Forward</string>
+
+
+    <string name="default_player_name">Basket Ball</string>
+    <string name="default_position">Benchwarmer</string>
+
+    <string name="our_team_name">UIUC Basketball</string>
+    <string name="title_activity_team_display">TeamDisplay</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

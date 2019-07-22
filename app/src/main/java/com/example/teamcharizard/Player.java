@@ -51,5 +51,23 @@ public class Player {
         name = name;
         number = number;
         position = position;
+        fgMade = 0;
+        fgMissed = 0;
+        ftMade = 0;
+        ftMissed = 0;
+        threeMade = 0;
+        threeMissed = 0;
+        steals = 0;
+        rebounds = 0;
+        blocks = 0;
     }
+
+
+    public void setPlayer(Player player, String name, int number, String position) {
+        player.name = name;
+        player.number = number;
+        player.position = position;
+        return;
+    }
+
 }
