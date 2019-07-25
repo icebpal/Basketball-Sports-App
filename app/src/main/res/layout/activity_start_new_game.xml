@@ -33,30 +33,11 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/team1"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:gravity="start"
-            android:hint="@string/team1"
-            android:text=""
-             />
-
-
-        <TextView
-            android:id="@+id/vs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:gravity="center_horizontal"
-            android:text="@string/VS" />
-
-        <EditText
             android:id="@+id/team2"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:gravity="end"
-            android:hint="@string/team2"
+            android:gravity="center"
+            android:hint="Opponent"
             android:text=""
              />
     </LinearLayout>

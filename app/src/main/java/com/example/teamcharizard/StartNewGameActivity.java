@@ -20,7 +20,7 @@ public class StartNewGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_new_game);
-        team_1 = (EditText)findViewById(R.id.team1);
+        //team_1 = (EditText)findViewById(R.id.team1);
         team_2 = (EditText)findViewById(R.id.team2);
         date = (EditText)findViewById(R.id.date);
         add = (Button) findViewById(R.id.addGame);
@@ -28,7 +28,7 @@ public class StartNewGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Globals g = (Globals)getApplication();
-                teamleft = team_1.getText().toString();
+                //teamleft = team_1.getText().toString();
                 teamright = team_2.getText().toString();
                 datestring = date.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);

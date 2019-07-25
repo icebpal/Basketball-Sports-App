@@ -34,7 +34,7 @@
                 android:id="@+id/view_action_table">
                        <TableRow>
                            <TextView
-                               android:text="@string/player_and_team"
+                               android:text="Player Number"
                                android:padding="6dip"
                                android:textSize="17sp"
                                android:textStyle="bold"/>

@@ -20,7 +20,7 @@ public class Game {
         quarter = new Vector<Integer>();
         ourScore = 0;
         theirScore = 0;
-        currQuarter = 1;
+        currQuarter = 0;
         date = "";
     }
 }

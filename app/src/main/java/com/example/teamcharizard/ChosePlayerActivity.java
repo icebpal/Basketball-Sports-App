@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Button;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RadioGroup;
@@ -15,7 +16,7 @@ import android.widget.RadioGroup;
 public class ChosePlayerActivity extends AppCompatActivity {
     private RadioGroup.OnCheckedChangeListener listener1, listener2, listener3;
     private RadioButton player_1, player_2, player_3, player_4, player_5;
-    private Button viewAction_button, submit_button;
+    private Button viewAction_button, submit_button, quarter_button;
     private RadioGroup player_group, action_group1, action_group2;
     private int prevPressed;
     static String number =  "Player Number";
@@ -33,6 +34,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
         action_group1.clearCheck();
         action_group2 = (RadioGroup)findViewById(R.id.action_group2);
         action_group2.clearCheck();
+        quarter_button = (Button)findViewById(R.id.quarter);
         player_1 = (RadioButton)findViewById(R.id.chose_player_button1);
         player_2 = (RadioButton)findViewById(R.id.chose_player_button2);
         player_3 = (RadioButton)findViewById(R.id.chose_player_button3);
@@ -45,8 +47,10 @@ public class ChosePlayerActivity extends AppCompatActivity {
         stats1.setText(g.gamesList.get(gameNum).ourScore.toString());
         TextView stats2 = (TextView)findViewById(R.id.score2);
         stats2.setText(g.gamesList.get(gameNum).theirScore.toString());
+        TextView oppName = (TextView)findViewById(R.id.team2);
+        oppName.setText(g.gamesList.get(gameNum).theirName);
 
-        Button swapplayerbutton = findViewById(R.id.swap_player_button);
+        //Button swapplayerbutton = findViewById(R.id.swap_player_button);
         player_1.setText(Integer.toString(g.our_team.active_roster[0].number));
         player_2.setText(Integer.toString(g.our_team.active_roster[1].number));
         player_3.setText(Integer.toString(g.our_team.active_roster[2].number));
@@ -63,8 +67,28 @@ public class ChosePlayerActivity extends AppCompatActivity {
                 g.gamesList.get(gameNum).pActions[x].playerNumber = g.our_team.bench_roster[x-5].number;
             }
         }
-
-
+        if (g.gamesList.get(gameNum).currQuarter < 4){
+            String[] s = {"1st", "2nd", "3rd", "4th"};
+            quarter_button.setText(s[g.gamesList.get(gameNum).currQuarter]);
+        }else{
+            String s = Integer.toString(g.gamesList.get(gameNum).currQuarter - 3) + "OT";
+            quarter_button.setText(s);
+        }
+        quarter_button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Globals g = (Globals) getApplication();
+                g.gamesList.get(gameNum).currQuarter += 1;
+                if (g.gamesList.get(gameNum).currQuarter < 4){
+                    String[] s = {"1st", "2nd", "3rd", "4th"};
+                    quarter_button.setText(s[g.gamesList.get(gameNum).currQuarter]);
+                }else{
+                    String s = Integer.toString(g.gamesList.get(gameNum).currQuarter - 3) + "OT";
+                    quarter_button.setText(s);
+                }
+            }
+        });
 
 
         listener2 = new RadioGroup.OnCheckedChangeListener() {
@@ -147,7 +171,7 @@ public class ChosePlayerActivity extends AppCompatActivity {
                     while (playerNum != g.gamesList.get(gameNum).pActions[playerOffset].playerNumber){
                         playerOffset++;
                     }
-                }else if (!(action.equals("Opp 2pt fg")) && !(action.equals("Opp 3pt fg"))){
+                }else if (!(action.equals("Opp 2pt fg")) && !(action.equals("Opp 3pt fg")) && !(action.equals("Opp FT made"))){
                     return;
                 }
 
@@ -161,6 +185,11 @@ public class ChosePlayerActivity extends AppCompatActivity {
                         break;
                     case "Opp 2pt fg":
                         g.gamesList.get(gameNum).theirScore += 2;
+                        textView = (TextView) findViewById(R.id.score2);
+                        textView.setText(g.gamesList.get(gameNum).theirScore.toString());
+                        break;
+                    case "Opp FT made":
+                        g.gamesList.get(gameNum).theirScore += 1;
                         textView = (TextView) findViewById(R.id.score2);
                         textView.setText(g.gamesList.get(gameNum).theirScore.toString());
                         break;
@@ -200,14 +229,17 @@ public class ChosePlayerActivity extends AppCompatActivity {
                         g.our_team.active_roster[playerOffset].fgMissed += 1;
                         break;
                     case "ft made":
-                        g.gamesList.get(gameNum).actions.add("ft made");
+                        g.gamesList.get(gameNum).actions.add("FT made");
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
+                        g.gamesList.get(gameNum).ourScore += 1;
+                        textView = (TextView) findViewById(R.id.score1);
+                        textView.setText(g.gamesList.get(gameNum).ourScore.toString());
                         g.gamesList.get(gameNum).pActions[playerOffset].ftMade += 1;
                         g.our_team.active_roster[playerOffset].ftMade += 1;
                         break;
                     case "ft missed":
-                        g.gamesList.get(gameNum).actions.add("ft made");
+                        g.gamesList.get(gameNum).actions.add("FT made");
                         g.gamesList.get(gameNum).quarter.add(g.gamesList.get(gameNum).currQuarter);
                         g.gamesList.get(gameNum).player.add(playerNum);
                         g.gamesList.get(gameNum).pActions[playerOffset].ftMissed += 1;
@@ -274,14 +306,14 @@ public class ChosePlayerActivity extends AppCompatActivity {
             }
         });
 
-        swapplayerbutton.setOnClickListener(new View.OnClickListener()
+        /*swapplayerbutton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PlayerSwapActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
     }
